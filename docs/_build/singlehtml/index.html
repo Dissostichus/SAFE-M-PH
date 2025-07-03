@@ -1,0 +1,736 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="fr" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Documentation SAFE-M pH mètre 1.0</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
+
+  
+      <script src="_static/jquery.js?v=5d32c60e"></script>
+      <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="_static/documentation_options.js?v=0f7429dd"></script>
+      <script src="_static/doctools.js?v=9bcbadda"></script>
+      <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="_static/translations.js?v=e6b791cb"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Recherche" href="search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="#" class="icon icon-home">
+            SAFE-M pH mètre
+          </a>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="#document-install">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#document-calib">Calibration du pH mètre</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#document-mesure">Mesures du pH</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#document-graph">Représentation graphique des données</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#document-library">Documentation des fonctions</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="#">SAFE-M pH mètre</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="#" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Documentation SAFE-M pH mètre 1.0</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="documentation-ph-metre">
+<h1>Documentation pH mètre<a class="headerlink" href="#documentation-ph-metre" title="Lien vers cette rubrique"></a></h1>
+<img alt="_images/fig_pH_metre.png" src="_images/fig_pH_metre.png" />
+<ul class="simple">
+<li><p>Ce programme permet de contrôler un ph-mètre arduino équipé d’une sonde de température PT100.</p></li>
+<li><p>Il résulte d’un travail collectif effectué par des étudiants de Licence 3 de l’Institut de physique du globe de Paris.</p></li>
+<li><p>Il est distribué sous la licence créative common CC-by-SA 4.0</p></li>
+<li><dl class="simple">
+<dt>Pour le citer:</dt><dd><p>Chardon, T., Gauthier-Brouard, T., Lu, C., Palmieri, C., de Singly, V., Lumembe, O., Métivier, F.,  Baugas-Villers, O., Bijon, V., Charles-Nicolas, A., Chin, C., Fossaert, H., Hallé, S., Henry-Gonzalez, M., Le Liorzou, C., Leroy, L., Marchaland Le Bihan, S., Monti, V., Pasquet, T., Perrenx, L., Poirier, M., Sauvage, D., Sookwhan, N., &amp; Thommy, G. (2024). SAFE-M-PH Un pH-mètre low cost pour l’enseignement [Computer software].</p>
+</dd>
+</dl>
+</li>
+</ul>
+<div class="toctree-wrapper compound">
+<span id="document-install"></span><section id="installation">
+<h2>Installation<a class="headerlink" href="#installation" title="Lien vers cette rubrique"></a></h2>
+<section id="emplacement-du-programme">
+<h3>Emplacement du programme<a class="headerlink" href="#emplacement-du-programme" title="Lien vers cette rubrique"></a></h3>
+<p>La première étape consiste à installer le programme permettant d’utiliser le pH mètre.
+Ce programme est en accès libre sur le site internet GitHub sur le compte <a class="reference external" href="https://github.com/fmetivier/pH_meter_V2.0">fmetivier</a>.</p>
+<p><a class="reference external" href="https://github.com/fmetivier/pH_meter_V2.0">https://github.com/fmetivier/pH_meter_V2.0</a></p>
+</section>
+<section id="charger-le-repertoire">
+<h3>Charger le répertoire<a class="headerlink" href="#charger-le-repertoire" title="Lien vers cette rubrique"></a></h3>
+<p>Afin d’utiliser le programme vous avez besoin de charger le répertoire dans lequel il se trouve. Ce répertoire
+contient l’ensemble des codes et dossiers nécessaires à la bonne utilisation des pH mètres.</p>
+<p>Vous pouvez cloner le répertoire en saisissant directement dans le terminal la commande:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">clone</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">fmetivier</span><span class="o">/</span><span class="n">pH_meter_V2</span><span class="mf">.0</span><span class="o">.</span><span class="n">git</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Attention, avant d’importer le programme vérifiez bien que vous vous situez dans votre répertoire de travail.</p>
+</div>
+</section>
+<section id="mise-en-place-du-ph-metre">
+<h3>Mise en place du pH mètre<a class="headerlink" href="#mise-en-place-du-ph-metre" title="Lien vers cette rubrique"></a></h3>
+<p>Avant de lancer le programme, branchez le pH-mètre avec le cable d’alimentation à un des ports USB
+de l’ordinateur. Branchez ensuite la sonde pH sur le boitier du pH-mètre. Devissez le capuchon de la
+sonde, rincez la avec de l’eau distillée ou de l’eau claire si vous n’avez pas d’eau distillée
+à votre disposition. Séchez délicatement puis plongez le pH-mètre dans la solution à mesurer.</p>
+</section>
+<section id="demarrage-du-programme">
+<h3>Démarrage du programme<a class="headerlink" href="#demarrage-du-programme" title="Lien vers cette rubrique"></a></h3>
+<p>Vous êtes maintenant prêt à faire fonctionner le pH-mètre. Vous devez avoir un dossier nommé <code class="docutils literal notranslate"><span class="pre">pH_meter_V2.0</span></code>, qui contient :</p>
+<dl class="simple">
+<dt><code class="docutils literal notranslate"><span class="pre">Programme</span> <span class="pre">pH</span> <span class="pre">mètre_V2.py</span></code>:</dt><dd><p>Il s’agit du programme principal permettant d’intéragir avec le pH-mètre au travers d’un interface dans le terminal.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">lib_pH.py</span></code>:</dt><dd><p>Ce code contient l’ensemble des fonctions nécessaire au fonctionnement du programme principal.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">DATA</span></code>:</dt><dd><p>Ces dans ce dossier que vont être enregistrées les données acquisent lors des mesures de pH.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">CALIB</span></code>:</dt><dd><p>Ce dossier contient les données de toutes les calibrations du pH mètre effectuées, ce qui permet notamment de les réutiliser.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">FIGURES</span></code>:</dt><dd><p>Comme son nom l’indique, ce dossier regroupe l’ensemble des graphique permettant de visualiser les données mesurées et de suivre l’évolution du pH
+des solutions analysées.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">send_ph_T_Uno</span></code>:</dt><dd><p>Ce dossier contient le script à charger sur la carte Arduino permettant de communiquer les données de voltage et de température, mesurées par les sondes, à l’ordinateur.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">Fritzing</span></code>:</dt><dd><p>Contient une image représentant l’agencement et le branchement des différents composants du pH mètre.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">compare.py</span></code>:</dt><dd><p>Ce programme permet d’évaluer la précision et fiabilité des pH-mètres construits à partir de carte Arduino par rapport à un pH mètre de laboratoire Hanna.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">__pycache__</span></code>:</dt><dd><p>Ce répertoire automatiquement créé par Python stocke les fichiers compilés des modules Python utilisés.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">Mauel_d_utilisation_pH_metre.pdf</span></code>:</dt><dd><p>Cours manuel explicitant l’utilisation du pH mètre.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">CITATION.cff</span></code>:</dt><dd><p>Métadonnées à utiliser pour citer cd logiciel si vous souhaités l’utiliser.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">README.md</span></code>:</dt><dd><p>Documentation du pH mètre.</p>
+</dd>
+</dl>
+<p>Essayons de lancer le programme pour voir comment celui-ci fonctionne. Saisissez simplement:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># A l&#39;intérieur du dossier pH_meter_V2/</span>
+<span class="n">python3</span> <span class="s1">&#39;Programme pH mètre_V2.py&#39;</span>
+</pre></div>
+</div>
+<p>Cela devrait lancer le programme dans le terminal et vous dire que vous que la connexion avec l’Arduino est établie,
+vous donner les paramètres de régression de la calibration par défaut du pH mètre ainsi qu’une figure de la courbe de calibration. De plus le programme affiche l’interface
+du MENU PRINCIPAL.</p>
+<p>Vous devriez obtenir:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>-&gt; python3 &#39;Programme pH mètre_V2.py&#39;
+/!\ Port de connexion non détecté. Merci de rétablir la connexion non établie : connexion au processeur dans les réglages avant utilisation.
+Attention aucun arduino disponible
+Les paramètres a et b de notre regression linéaire sont [0.01323408 2.15989141]
+Pour un voltage de 600 le pH prédit est de 10.10033889796552
+0.99985
+
+    ===========================================================================
+    MENU PRINCIPAL
+    ===========================================================================
+    Que souhaitez-vous faire ?
+    1 - Calibrer
+    2 - Mesurer
+    3 - Représenter graphiquement
+    4 - Quitter
+    ===========================================================================
+    ?
+</pre></div>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Avertissement</p>
+<p>Si le pH mètre n’est pas correctement branché à l’ordinateur
+ou que l’Arduino ne parvient à se connecter au port d’accès un message d’erreur devrait apparaître de la forme:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>-&gt; python3 &#39;Programme pH mètre_V2.py&#39;
+/!\ Port de connexion non détecté. Merci de rétablir la connexion non établie : connexion au processeur dans les réglages avant utilisation.
+Attention aucun arduino disponible
+</pre></div>
+</div>
+</div>
+<p>Le programme est désormais lancé et le pH-mètre prêt à être utilisé.</p>
+<section id="la-suite">
+<h4>La suite<a class="headerlink" href="#la-suite" title="Lien vers cette rubrique"></a></h4>
+<p>Il est maintenant temps de passer aux étapes suivantes:</p>
+<p><a class="reference internal" href="#document-calib#calibration"><span class="std std-ref">Calibration du pH mètre</span></a></p>
+<p><a class="reference internal" href="#document-mesure#mesure"><span class="std std-ref">Mesures du pH</span></a></p>
+<p><a class="reference internal" href="#document-graph#graph"><span class="std std-ref">Représentation graphique des données</span></a></p>
+</section>
+</section>
+</section>
+<span id="document-calib"></span><section id="calibration-du-ph-metre">
+<span id="calibration"></span><h2>Calibration du pH mètre<a class="headerlink" href="#calibration-du-ph-metre" title="Lien vers cette rubrique"></a></h2>
+<p>Pour une meilleure exactitude, un étalonnage fréquent de l’instrument est recommandé. Un étalonnage
+est indispensable dans les cas suivants :</p>
+<ul class="simple">
+<li><p>L’électrode a été remplacée</p></li>
+<li><p>Au moins une fois par mois</p></li>
+<li><p>Après avoir mesuré des produits chimiques agressifs</p></li>
+<li><p>Lorsqu’une grande exactitude est requise</p></li>
+</ul>
+<section id="preparation">
+<h3>Préparation<a class="headerlink" href="#preparation" title="Lien vers cette rubrique"></a></h3>
+<p>Versez une petite quantité de solution <strong>pH 7,00</strong> et <strong>pH 4,00</strong> dans deux récipients propres. Pour une
+meilleure exactitude, il est conseillé de prendre deux récipients par solution, un récipient pour le rinçage et un autre pour
+l’étalonnage à proprement dit. Le choix des solutions étalons se fait selon l’utilisation, soit <strong>pH 7,00</strong> et
+<strong>pH 4,00</strong> dans le cas d’une calibration à deux tampons et <strong>pH 10,00</strong>, <strong>pH 7,00</strong> et <strong>pH 4,00</strong> dans le cas d’une
+calibration à trois tampons.</p>
+</section>
+<section id="procedure">
+<h3>Procédure<a class="headerlink" href="#procedure" title="Lien vers cette rubrique"></a></h3>
+<section id="calibration-a-deux-solutions-tampons">
+<h4>Calibration à deux solutions tampons<a class="headerlink" href="#calibration-a-deux-solutions-tampons" title="Lien vers cette rubrique"></a></h4>
+<p>Ôtez le capuchon de protection en bout de la sonde pH, <strong>rincez</strong> celle-ci avec de l’eau distillée puis immergez l’électrode
+dans une solution <strong>pH 7,00</strong> ; agitez délicatement pendant quelques secondes ; immergez la sonde de température
+et <strong>attendez 2 à 3 minutes</strong> pour avoir un équilibre thermique correct.</p>
+<p>Choisissez dans le menu interface l’option <code class="docutils literal notranslate"><span class="pre">Calibrer</span></code> en appuyant sur le chiffre <code class="docutils literal notranslate"><span class="pre">1</span></code> et en validant avec
+la touche <strong>Entrée</strong>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>===========================================================================
+MENU PRINCIPAL
+===========================================================================
+Que souhaitez-vous faire ?
+1 - Calibrer
+2 - Mesurer
+3 - Représenter graphiquement
+4 - Quitter
+===========================================================================
+?
+
+-&gt; 1
+
+    ===========================================================================
+    MENU CALIBRATION
+    ==========================================================================
+    Voulez - vous :
+    1 - Calibrer avec deux tampons (pH 7 et 4) ?
+    2 - Calibrer avec trois tampons (pH 7, 4 et 10) ?
+    3 - Calibrer à partir d&#39;une calibration déjà existante dans le répertoire
+    4 - Quitter le menu calibration et retourner au menu principal
+    ===========================================================================
+    ?
+</pre></div>
+</div>
+<p>Sélectionnez ensuite l’option <code class="docutils literal notranslate"><span class="pre">Calibrer</span> <span class="pre">avec</span> <span class="pre">deux</span> <span class="pre">tampons</span></code> de la même façon.
+Validez une seconde fois lorsque vous serez prêt à mesurer le tampon à
+<strong>pH 7,00</strong>. Le programme vous demandera alors de patienter <strong>une minute</strong> le temps que la sonde pH se
+stabilise puis effectuera <strong>100 mesures</strong> pour une durée approximative de <strong>deux minutes</strong>.</p>
+<p>Une fois les mesures à <strong>pH 7,00</strong> effectuées, <strong>rincez</strong> la sonde pH avec de l’eau distillée.</p>
+<p>Plongez l’électrode dans la solution <strong>pH 4,00</strong> et attendez quelques minutes pour la stabilisation de la
+mesure. Une fois prêt à mesurer le tampon à pH 4,00, appuyez sur la touche <strong>Entrée</strong> pour initier les
+mesures. Comme plus tôt, le programme vous demandera alors de patienter <strong>1 minute</strong> le temps que la sonde pH
+se stabilise puis effectuera ses <strong>100 mesures</strong>.</p>
+<p>Une fois les mesures effectuées, le programme vous demandera:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>’Voulez-vous visualiser la calibration (O/N) ?’
+</pre></div>
+</div>
+<p>En répondant <code class="docutils literal notranslate"><span class="pre">O</span></code>, <code class="docutils literal notranslate"><span class="pre">o</span></code>, <code class="docutils literal notranslate"><span class="pre">Y</span></code> ou <code class="docutils literal notranslate"><span class="pre">y</span></code>, vous obtiendrez alors la courbe d’étalonnage de la calibration
+que vous venez d’effectuer, ses paramètres et le coefficient de corrélation. L’étalonnage est alors terminé, vous pouvez passer
+à vos <a class="reference internal" href="#document-mesure#mesure"><span class="std std-ref">Mesures du pH</span></a>.</p>
+<p>Si le programme juge que la calibration n’est pas satisfaisante <strong>(R2 &lt; 0.95)</strong>, il vous sera proposé de
+recalibrer votre pH-mètre.
+Si vous souhaitez recalibrer le pH-mètre, choisissez l’option <code class="docutils literal notranslate"><span class="pre">1</span></code>.
+Si vous souhaitez continuer ainsi et commencer à mesurer, choisissez l’option <code class="docutils literal notranslate"><span class="pre">2</span></code>.</p>
+</section>
+<section id="calibration-a-trois-solution-tampons">
+<h4>Calibration à trois solution tampons<a class="headerlink" href="#calibration-a-trois-solution-tampons" title="Lien vers cette rubrique"></a></h4>
+<p>Si vous souhaitez calibrer votre pH-mètre avec <strong>3 solutions tampons</strong> la procédure est la même mais il vous faudra
+continuer avec la solution <strong>pH 10,00</strong>.
+Pour cela, choisissez dans l’interface <code class="docutils literal notranslate"><span class="pre">MENU</span> <span class="pre">CALIBRATION</span></code> l’option <code class="docutils literal notranslate"><span class="pre">2</span> <span class="pre">-</span> <span class="pre">Calibrer</span> <span class="pre">avec</span> <span class="pre">trois</span>
+<span class="pre">tampons</span></code>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>===========================================================================
+MENU CALIBRATION
+==========================================================================
+Voulez - vous :
+1 - Calibrer avec deux tampons (pH 7 et 4) ?
+2 - Calibrer avec trois tampons (pH 7, 4 et 10) ?
+3 - Calibrer à partir d&#39;une calibration déjà existante dans le répertoire
+4 - Quitter le menu calibration et retourner au menu principal
+===========================================================================
+?
+</pre></div>
+</div>
+</section>
+<section id="calibration-a-partir-de-donnees-enregistrees">
+<h4>Calibration à partir de données enregistrées<a class="headerlink" href="#calibration-a-partir-de-donnees-enregistrees" title="Lien vers cette rubrique"></a></h4>
+<p>Il est aussi possible de calibrer votre pH-mètre à partir de données de précédentes calibrations déja répertoriées dans le dossier <code class="docutils literal notranslate"><span class="pre">CALIB</span></code>.
+Pour cela, choisissez dans le <code class="docutils literal notranslate"><span class="pre">MENU</span> <span class="pre">CALIBRATION</span></code> l’option <code class="docutils literal notranslate"><span class="pre">3</span> <span class="pre">-</span> <span class="pre">Calibration</span> <span class="pre">à</span> <span class="pre">partir</span> <span class="pre">d’une</span> <span class="pre">calibration</span> <span class="pre">déjà</span> <span class="pre">exitante</span> <span class="pre">dans</span> <span class="pre">le</span> <span class="pre">répertoire</span></code>.
+Une liste de fichier vous est proposée de la forme:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>===========================================================================
+MENU CALIBRATION
+==========================================================================
+Voulez - vous :
+1 - Calibrer avec deux tampons (pH 7 et 4) ?
+2 - Calibrer avec trois tampons (pH 7, 4 et 10) ?
+3 - Calibrer à partir d&#39;une calibration déjà existante dans le répertoire
+4 - Quitter le menu calibration et retourner au menu principal
+===========================================================================
+?
+
+-&gt; 3
+
+Calibrations disponibles:
+0 - ./CALIB/fichier_calibration_pH10.02 Tue Jun 25 16_23_38 2024.csv
+1 - ./CALIB/fichier_calibration_pH10.03 Fri Jun 28 11_03_55 2024.csv
+2 - ./CALIB/fichier_calibration_pH10.05 Thu Jun  6 14_51_13 2024.csv
+3 - ./CALIB/fichier_calibration_pH10.04 Thu May 30 11_20_10 2024.csv
+4 - ./CALIB/fichier_calibration_pH10.04 Thu Jun  6 12_36_05 2024.csv
+5 - ./CALIB/fichier_calibration_pH10.04 Fri May 24 12_30_58 2024.csv
+6 - ./CALIB/fichier_calibration_pH10.05 Thu Jun  6 14_36_13 2024.csv
+7 - ./CALIB/fichier_calibration_pH10.04 Fri May 24 12_08_50 2024.csv
+8 - ./CALIB/fichier_calibration_pH10.04 Thu Jun  6 14_21_31 2024.csv
+9 - ./CALIB/fichier_calibration_pH10.06 Mon Jul 15 11_34_16 2024.csv
+10 - ./CALIB/fichier_calibration_pH10.04 Mon Jul 15 16_06_37 2024.csv
+11 - ./CALIB/fichier_calibration_pH10.05 Tue Jul 16 08_52_04 2024.csv
+Choisissez votre calibration en entrant son numéro d&#39;ordre:
+</pre></div>
+</div>
+<p>Il suffit alors de renseigner le numéro d’ordre des données que vous souhaitez utiliser et valider avec la touche <strong>Entrée</strong>.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Le fichier à sélectionner est de la forme <code class="docutils literal notranslate"><span class="pre">./CALIB/fichier_calibration_pH10.00</span> <span class="pre">Day</span> <span class="pre">Month</span> <span class="pre">H_min_sec</span> <span class="pre">Year.csv</span></code> mais implicitement
+ceux correspondant à la même calibration pour les <strong>pH 4.00</strong> et <strong>7.00</strong> vont aussi être utilisé.</p>
+</div>
+<p>Une fois le fichier renseigné la calibration sera effectuée, la droite de la calibration choisie apparaitra à
+l’écran ainsi que la courbe de l’évolution de l’écart-type des mesures au cours du temps.
+Vous pouvez maintenant effectuer vos <a class="reference internal" href="#document-mesure#mesure"><span class="std std-ref">Mesures du pH</span></a>.</p>
+<div class="admonition warning">
+<p class="admonition-title">Avertissement</p>
+<p>Assurez-vous que les fichiers que vous renseignez correspondent au format demandé :
+un fichier <code class="docutils literal notranslate"><span class="pre">csv</span></code>, avec pour chaque ligne les informations <code class="docutils literal notranslate"><span class="pre">temps(s);température(°C);voltage(mV)</span></code>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mf">0.00</span><span class="p">;</span> <span class="mf">23.27</span><span class="p">;</span> <span class="mf">180.00</span>
+<span class="mf">0.25</span><span class="p">;</span> <span class="mf">23.33</span><span class="p">;</span> <span class="mf">180.00</span>
+<span class="mf">0.51</span><span class="p">;</span> <span class="mf">23.33</span><span class="p">;</span> <span class="mf">180.00</span>
+<span class="mf">0.76</span><span class="p">;</span> <span class="mf">23.33</span><span class="p">;</span> <span class="mf">180.00</span>
+<span class="mf">1.02</span><span class="p">;</span> <span class="mf">23.37</span><span class="p">;</span> <span class="mf">180.00</span>
+<span class="mf">1.27</span><span class="p">;</span> <span class="mf">23.40</span><span class="p">;</span> <span class="mf">180.00</span>
+<span class="mf">1.52</span><span class="p">;</span> <span class="mf">23.43</span><span class="p">;</span> <span class="mf">180.00</span>
+<span class="mf">1.78</span><span class="p">;</span> <span class="mf">23.43</span><span class="p">;</span> <span class="mf">179.00</span>
+<span class="mf">2.03</span><span class="p">;</span> <span class="mf">23.47</span><span class="p">;</span> <span class="mf">180.00</span>
+<span class="o">...</span>
+</pre></div>
+</div>
+<p>Par défaut cela correspond au format des données de <a class="reference internal" href="#document-mesure#mesure"><span class="std std-ref">Mesures du pH</span></a>.</p>
+</div>
+</section>
+</section>
+</section>
+<span id="document-mesure"></span><section id="mesures-du-ph">
+<span id="mesure"></span><h2>Mesures du pH<a class="headerlink" href="#mesures-du-ph" title="Lien vers cette rubrique"></a></h2>
+<div class="admonition warning">
+<p class="admonition-title">Avertissement</p>
+<p>Il est important que la solution à mesurer soit dans les mêmes conditions de pression mais surtout de
+température que les solutions tampons lors de la calibration, puisque la correction du pH en fonction de
+la température s’effectue pendant la calibration. Si la température de votre solution évolue au cours du
+temps une nouvelle calibration est nécessaire.</p>
+</div>
+<section id="preparation">
+<h3>Préparation<a class="headerlink" href="#preparation" title="Lien vers cette rubrique"></a></h3>
+<p>Après avoir oté le capuchon de protection, plongez la sonde pH ainsi que la sonde de température dans la solution à mesurer.
+Agitez l’électrode pendant quelques secondes puis stabilisez-la.</p>
+<p>Sélectionnez dans le <code class="docutils literal notranslate"><span class="pre">MENU</span> <span class="pre">PRINCIPAL</span></code> l’option <code class="docutils literal notranslate"><span class="pre">2</span> <span class="pre">-</span> <span class="pre">Mesurer</span></code> en appuyant sur la touche <code class="docutils literal notranslate"><span class="pre">2</span></code> de votre clavier
+puis valider avec la touche <strong>Entrée</strong>.
+Le programme vous demande alors si vous êtes prêt à initier les mesures, appuyez sur <strong>Entrée</strong> lorsque vous le serez.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Pour avoir des mesures précises, il est nécessaire que l’instrument ait été étalonné au préalable. Si les mesures sont effectuées dans des échantillons
+successifs, il est recommandé de rincer l’électrode entre chaque échantillon, afin de ne pas contaminer
+les échantillons entre-eux.</p>
+</div>
+</section>
+<section id="prise-de-mesure">
+<h3>Prise de mesure<a class="headerlink" href="#prise-de-mesure" title="Lien vers cette rubrique"></a></h3>
+<p>Une fois l’opération lancée, <strong>10</strong> valeurs de pH sont mesurées, pour ces 10 valeurs le programme va afficher
+le <strong>temps</strong> (en secondes) de la prise mesure par rapport à l’initiation des mesures, la <strong>température moyenne</strong>
+et <strong>l’écart-type des mesures de température</strong>, le <strong>voltage moyen</strong>, <strong>l’écart-type des mesures de voltage</strong>, le <strong>pH moyen</strong> mesuré, <strong>l’écart-type
+des mesures de pH</strong> et enfin une valeur de la <strong>stabilité</strong>.</p>
+<p>La stabilité est un coefficient qui représente l’ecart entre <strong>10</strong> valeurs de pH mesurées et les <strong>10</strong> valeurs mesurées précedentes.
+La mesure de la sonde est considérée comme stabilisée lorque que le coeffcient de stabilité est proche de <strong>zéro</strong>.
+Tant que la valeur du coeffcient de stabilité n’est pas satisfaisante le programme continue d’effectuer des mesures.</p>
+<p>Une fois une stabilité satisfaisante atteinte, le programme arrête ses mesures et demande à l’utilisateur s’il souhaite continuer ou non la prise de mesures.
+L’utilisateur a alors le choix de poursuivre les mesures en répondant par <code class="docutils literal notranslate"><span class="pre">O</span></code>, <code class="docutils literal notranslate"><span class="pre">o</span></code>, <code class="docutils literal notranslate"><span class="pre">Y</span></code> ou <code class="docutils literal notranslate"><span class="pre">y</span></code>. Le programme effectue alors 20 mesures
+supplémentaires avant de reproposer de continuer ou non.</p>
+<p>Si l’utilisateur juge que le nombre de mesures est suffisant et souhaite s’arrêter là, il répond alors à la question posée avec <code class="docutils literal notranslate"><span class="pre">N</span></code> ou <code class="docutils literal notranslate"><span class="pre">n</span></code>.
+Le programme propose alors à l’utilisateur s’il souhaite voir la <a class="reference internal" href="#document-graph#graph"><span class="std std-ref">Représentation graphique des données</span></a> qu’il vient de mesurer.
+L’ensemble des mesures est enregistré dans un fichier <code class="docutils literal notranslate"><span class="pre">csv</span></code> de la forme <code class="docutils literal notranslate"><span class="pre">fichier</span> <span class="pre">mesure</span> <span class="pre">Day</span> <span class="pre">Month</span> <span class="pre">H_min_sec</span> <span class="pre">Year.csv</span></code> dans le dossier <code class="docutils literal notranslate"><span class="pre">DATA</span></code>.</p>
+<div class="admonition warning">
+<p class="admonition-title">Avertissement</p>
+<p>Si vous souhaitez enregistrer l’évolution des valeurs de pH de vos données en fonction du temps référez-vous maintenant à la prochaine étape :</p>
+<p><a class="reference internal" href="#document-graph#graph"><span class="std std-ref">Représentation graphique des données</span></a></p>
+</div>
+</section>
+<section id="mesures-d-alcalinite">
+<h3>Mesures d’Alcalinité<a class="headerlink" href="#mesures-d-alcalinite" title="Lien vers cette rubrique"></a></h3>
+<p>Si vous souhaitez utilisez ces pH mètre pour une mesure d’alcalinité la procédure est la même mais poursuivez les mesures jusqu’à la fin de votre titrage avec l’option</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Continuer les mesures (O/N) ?
+
+-&gt; N
+</pre></div>
+</div>
+<p>Le titrage peut être considéré comme terminé une fois la valeur seuil de pH atteinte à <strong>pH 3.7</strong>.</p>
+<p>Assurez vous que la mesure de pH soit bien stabilisée avant d’ajouter un nouvel incrément de <strong>HCl</strong>.</p>
+<p>La représentation graphique de vos mesure aux termes du titrage ainsi que le fichier contenant les données
+mesurées, enregistré dans le dossier <code class="docutils literal notranslate"><span class="pre">DATA</span></code>, vous permettront de déterminer l’alcalinité à partir des méthodes de
+<strong>Gran</strong> et de <strong>Culberson</strong>.</p>
+</section>
+</section>
+<span id="document-graph"></span><section id="representation-graphique-des-donnees">
+<span id="graph"></span><h2>Représentation graphique des données<a class="headerlink" href="#representation-graphique-des-donnees" title="Lien vers cette rubrique"></a></h2>
+<div class="admonition warning">
+<p class="admonition-title">Avertissement</p>
+<p>Que ce soit à l’issue de votre prise de vos <a class="reference internal" href="#document-mesure#mesure"><span class="std std-ref">Mesures du pH</span></a> ou pour des données plus anciennes,
+lorsque ce vous souhaitez enregistrer votre figure, ne fermer la fenêtre affichée par le programme la contenant qu’une fois avoir sélectionné
+l’option d’enregistrement:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Sauver (O/N) ?
+
+-&gt; O
+</pre></div>
+</div>
+<p>Sinon vous n’enregistrerez qu’une page blanche.</p>
+</div>
+<p>Ce programme permet de représenter et d’enregistrer graphiquement les mesures
+effectuées juste à l’instant ou lors de prises de mesures plus anciennes.
+Selectionnez pour cela l’option <code class="docutils literal notranslate"><span class="pre">3</span> <span class="pre">-</span> <span class="pre">Représenter</span> <span class="pre">graphiquement</span></code> dans le <code class="docutils literal notranslate"><span class="pre">MENU</span> <span class="pre">PRINCIPAL</span></code>.</p>
+<p>Le programme vous affichera la liste des données de mesures disponibles dans le dossier <code class="docutils literal notranslate"><span class="pre">DATA</span></code>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>===========================================================================
+MENU PRINCIPAL
+===========================================================================
+Que souhaitez-vous faire ?
+1 - Calibrer
+2 - Mesurer
+3 - Représenter graphiquement
+4 - Quitter
+===========================================================================
+?
+
+-&gt; 3
+
+    fichiers disponibles:
+    0 - ./DATA/fichier_mesure Thu Jun  6 12_58_56 2024.csv
+    1 - ./DATA/fichier_mesure Thu Jun  6 12_03_47 2024.csv
+    2 - ./DATA/fichier_mesure Thu Jun  6 12_52_02 2024.csv
+    3 - ./DATA/fichier_mesure Thu Jun  6 12_04_58 2024.csv
+    4 - ./DATA/fichier_mesure Thu Jun  6 12_14_54 2024.csv
+    5 - ./DATA/fichier_mesure Fri Jun 28 11_19_49 2024.csv
+    6 - ./DATA/fichier_mesure Fri Jun 28 11_27_36 2024.csv
+    7 - ./DATA/fichier_mesure Thu Jun  6 12_46_56 2024.csv
+    8 - ./DATA/fichier_mesure Fri Jun 28 11_21_37 2024.csv
+    ...
+</pre></div>
+</div>
+<p>Il suffit alors de renseigner le numéro d’ordre des données que vous souhaitez utiliser et valider avec la touche <strong>Entrée</strong>.</p>
+<p>Le graphique de vos données ainsi que l’histogramme des mesures associés vont s’afficher. Le programme va alors vous demander:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Sauver (O/N) ?
+</pre></div>
+</div>
+<p>Il est possible si vous le souhaitez d’enregistrer le graphique obtenu dans le dossier <code class="docutils literal notranslate"><span class="pre">FIGURES</span></code>, il vous suffit alors de répondre avec les touches
+<code class="docutils literal notranslate"><span class="pre">O</span></code>, <code class="docutils literal notranslate"><span class="pre">o</span></code>, <code class="docutils literal notranslate"><span class="pre">Y</span></code> ou <code class="docutils literal notranslate"><span class="pre">y</span></code>.
+Le fichier sera alors enregistré au format <code class="docutils literal notranslate"><span class="pre">pdf</span></code>.</p>
+</section>
+<span id="document-library"></span><section id="module-lib_pH">
+<span id="documentation-des-fonctions"></span><h2>Documentation des fonctions<a class="headerlink" href="#module-lib_pH" title="Lien vers cette rubrique"></a></h2>
+<p>Created on Wed May 22 16:09:59 2024</p>
+<p>&#64;author ori: Clathi</p>
+<dl class="py function">
+<dt class="sig sig-object py" id="lib_pH.Calibration">
+<span class="sig-prename descclassname"><span class="pre">lib_pH.</span></span><span class="sig-name descname"><span class="pre">Calibration</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">buffers</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">[7,</span> <span class="pre">4]</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">200</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">port_test</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lib_pH.Calibration" title="Lien vers cette définition"></a></dt>
+<dd><p>Calibre la sonde pH pour 2 et 3 tampons (7, 4 et 10) en 100 mesures. Corrige les valeurs obtenues en fonction de la température.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Paramètres<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>buffers</strong> (<em>list</em><em>, </em><em>liste</em>) – DESCRIPTION. The default is [7, 4].</p></li>
+<li><p><strong>n</strong> (<em>int</em><em>, </em><em>nombre de mesures</em>) – DESCRIPTION. The default is 100.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Renvoie<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>model</strong> – DESCRIPTION. Les paramètres a et b de la courbe de calibration, a correspond au coefficient directeur et b à l’ordonnée à l’origine.</p>
+</dd>
+<dt class="field-odd">Type renvoyé<span class="colon">:</span></dt>
+<dd class="field-odd"><p>list, liste</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="lib_pH.Calibration_existante">
+<span class="sig-prename descclassname"><span class="pre">lib_pH.</span></span><span class="sig-name descname"><span class="pre">Calibration_existante</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#lib_pH.Calibration_existante" title="Lien vers cette définition"></a></dt>
+<dd><p>Calibre la sonde pH pour 3 tampons (7, 4 et 10) à partir d’une calibration déjà existante, et présente dans le même répertoire que ce programme.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Renvoie<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>model</strong> – DESCRIPTION. Les paramètres a et b de la courbe de calibration, a correspond au coefficient directeur et b à l’ordonnée à l’origine.</p>
+</dd>
+<dt class="field-even">Type renvoyé<span class="colon">:</span></dt>
+<dd class="field-even"><p>list, liste</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="lib_pH.default_Calibration">
+<span class="sig-prename descclassname"><span class="pre">lib_pH.</span></span><span class="sig-name descname"><span class="pre">default_Calibration</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#lib_pH.default_Calibration" title="Lien vers cette définition"></a></dt>
+<dd><p>Calibration par défaut de la sonde pH, effectuée en laboratoire.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Renvoie<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>model</strong> – DESCRIPTION. Les paramètres a et b de la courbe de calibration par défaut, a correspond au coefficient directeur et b à l’ordonnée à l’origine.</p>
+</dd>
+<dt class="field-even">Type renvoyé<span class="colon">:</span></dt>
+<dd class="field-even"><p>list, liste</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="lib_pH.fn_settings">
+<span class="sig-prename descclassname"><span class="pre">lib_pH.</span></span><span class="sig-name descname"><span class="pre">fn_settings</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">portIN</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">s</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">br</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nb_inter</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">time_inter</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lib_pH.fn_settings" title="Lien vers cette définition"></a></dt>
+<dd><p>Configuration des paramètres modifiables par l’utilisateur.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Paramètres<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>portIN</strong> (<em>string</em>) – Identifiant du port série sur lequel le script doit lire des données.</p></li>
+<li><p><strong>s</strong> (<em>serial.tools.list_ports_common.ListPortInfo</em>) – Objet Serial sur lequel on peut appliquer des fonctions d’ouverture, de lecture et de fermeture du port série affilié.</p></li>
+<li><p><strong>br</strong> (<em>int</em>) – Flux de données en baud.</p></li>
+<li><p><strong>nb_inter</strong> (<em>int</em>) – Nombre de valeurs utilisées pour constituer une mesure (une mesure correspond à la moyenne de toutes les valeurs prélevées).</p></li>
+<li><p><strong>time_inter</strong> (<em>float</em>) – Temps d’intervalle entre chaque prélèvement de valeur au sein d’une mesure.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Renvoie<span class="colon">:</span></dt>
+<dd class="field-even"><p><ul class="simple">
+<li><p><strong>portIN</strong> (<em>string</em>) – Identifiant du port série sur lequel le script doit lire des données.</p></li>
+<li><p><strong>s</strong> (<em>serial.tools.list_ports_common.ListPortInfo</em>) – Objet Serial sur lequel on peut appliquer des fonctions d’ouverture, de lecture et de fermeture du port série affilié.</p></li>
+<li><p><strong>br</strong> (<em>int</em>) – Flux de données en baud.</p></li>
+<li><p><strong>nb_inter</strong> (<em>int</em>) – Nombre de valeurs utilisées pour constituer une mesure (une mesure correspond à la moyenne de toutes les valeurs prélevées).</p></li>
+<li><p><strong>time_inter</strong> (<em>float</em>) – Temps d’intervalle entre chaque prélèvement de valeur au sein d’une mesure.</p></li>
+</ul>
+</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="lib_pH.graph">
+<span class="sig-prename descclassname"><span class="pre">lib_pH.</span></span><span class="sig-name descname"><span class="pre">graph</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#lib_pH.graph" title="Lien vers cette définition"></a></dt>
+<dd><p>Fait un graphique
+ph =f(t) et T=f(t) avec barres d’erreurs
+à partir d’un fichier de mesures
+sélectionné dans le dossier ./DATA</p>
+<p>propose la sauvegarde du fichier dans le dossier ./FIGURES au format pdf</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="lib_pH.indiv_measure">
+<span class="sig-prename descclassname"><span class="pre">lib_pH.</span></span><span class="sig-name descname"><span class="pre">indiv_measure</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port_test</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">model</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">10</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lib_pH.indiv_measure" title="Lien vers cette définition"></a></dt>
+<dd><p>_summary_</p>
+<dl class="field-list simple">
+<dt class="field-odd">Paramètres<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>model</strong> (<em>_type_</em>) – _description_</p></li>
+<li><p><strong>n</strong> (<em>int</em><em>, </em><em>optional</em>) – _description_, by default 10</p></li>
+</ul>
+</dd>
+<dt class="field-even">Type renvoyé<span class="colon">:</span></dt>
+<dd class="field-even"><p>tuple contenant les moyennes et écart types de température, voltage et ph de la solution</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="lib_pH.measure">
+<span class="sig-prename descclassname"><span class="pre">lib_pH.</span></span><span class="sig-name descname"><span class="pre">measure</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">model</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_stab</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">20</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">port_test</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">10</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lib_pH.measure" title="Lien vers cette définition"></a></dt>
+<dd><p>Mesure le pH en se basant sur une calibration et renvoie l’évolution des écart-type au cours du temps.</p>
+<p>effectue n mesure individuelles</p>
+<dl class="field-list simple">
+<dt class="field-odd">Paramètres<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>model</strong> (<em>list</em><em>, </em><em>liste</em>) – Calibration utilisée. Par défaut les paramètres de courbe de calibration est a = 75.55116667 et b = -163.1275.</p></li>
+<li><p><strong>n</strong> (<em>int</em><em>, </em><em>nombre d'acquisitions pour une mesure</em>) – DESCRIPTION. The default is 10.</p></li>
+<li><p><strong>n_stab</strong> (<em>int</em><em>, </em><em>nombre de mesures utilisées dans le calcul de stabilité</em>)</p></li>
+<li><p><strong>&quot;&quot;</strong> (<em>port_test =</em>)</p></li>
+<li><p><strong>string</strong></p></li>
+<li><p><strong>ouvert</strong> (<em>port com</em>)</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="lib_pH.measurement">
+<span class="sig-prename descclassname"><span class="pre">lib_pH.</span></span><span class="sig-name descname"><span class="pre">measurement</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">a</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">b</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nb_inter</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">time_inter</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">s</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lib_pH.measurement" title="Lien vers cette définition"></a></dt>
+<dd><p>Mesure unique ou en série et enregistrement éventuel des données.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Paramètres<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>a</strong> (<em>float</em>) – Pente de régression linéaire entre pH et voltage mesuré.</p></li>
+<li><p><strong>b</strong> (<em>float</em>) – Ordonnée à l’origine de régression linéaire entre pH et voltage mesuré.</p></li>
+<li><p><strong>nb_inter</strong> (<em>int</em>) – Nombre de valeurs utilisées pour constituer une mesure (une mesure correspond à la moyenne de toutes les valeurs prélevées).</p></li>
+<li><p><strong>time_inter</strong> (<em>float</em>) – Temps d’intervalle entre chaque prélèvement de valeur au sein d’une mesure.</p></li>
+<li><p><strong>s</strong> (<em>serial.tools.list_ports_common.ListPortInfo</em>) – Objet Serial sur lequel on peut appliquer des fonctions d’ouverture, de lecture et de fermeture du port série affilié.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Type renvoyé<span class="colon">:</span></dt>
+<dd class="field-even"><p>None.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="lib_pH.pH_sensor">
+<span class="sig-prename descclassname"><span class="pre">lib_pH.</span></span><span class="sig-name descname"><span class="pre">pH_sensor</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">nb_inter</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">time_inter</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">s</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lib_pH.pH_sensor" title="Lien vers cette définition"></a></dt>
+<dd><p>Mesure du voltage du pH-mètre et de la température.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Paramètres<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>nb_inter</strong> (<em>int</em>) – Nombre de valeurs utilisées pour constituer une mesure (une mesure correspond à la moyenne de toutes les valeurs prélevées).</p></li>
+<li><p><strong>time_inter</strong> (<em>float</em>) – Temps d’intervalle entre chaque prélèvement de valeur au sein d’une mesure.</p></li>
+<li><p><strong>s</strong> (<em>serial.tools.list_ports_common.ListPortInfo</em>) – Objet Serial sur lequel on peut appliquer des fonctions d’ouverture, de lecture et de fermeture du port série affilié.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Renvoie<span class="colon">:</span></dt>
+<dd class="field-even"><p><ul class="simple">
+<li><p><strong>list_pH</strong> (<em>list</em>) – valeurs de voltages liées au pH et utilisées pour une mesure.</p></li>
+<li><p><strong>list_temperatures</strong> (<em>list</em>) – valeurs de températures utilisées pour une mesure.</p></li>
+</ul>
+</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="lib_pH.pH_temp_adjust">
+<span class="sig-prename descclassname"><span class="pre">lib_pH.</span></span><span class="sig-name descname"><span class="pre">pH_temp_adjust</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pH</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">temp</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lib_pH.pH_temp_adjust" title="Lien vers cette définition"></a></dt>
+<dd><p>Ajustement du pH étalon en fonction de la température par interpolation linéaire.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Paramètres<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>pH</strong> (<em>int</em>) – pH de la solution étalon.</p></li>
+<li><p><strong>temp</strong> (<em>float</em>) – température mesurée de la solution.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Renvoie<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>pH_adjusted</strong> – pH interpolé en fonction de correspondances entre pH et températures connues.</p>
+</dd>
+<dt class="field-odd">Type renvoyé<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="lib_pH.plot_calib">
+<span class="sig-prename descclassname"><span class="pre">lib_pH.</span></span><span class="sig-name descname"><span class="pre">plot_calib</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">voltage_values</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">buffers</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">errorbuffers_values</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">errorvoltage_values</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">t</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">EM4</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">EM7</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">EM10</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">predict</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">equation</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">R2</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lib_pH.plot_calib" title="Lien vers cette définition"></a></dt>
+<dd><p>Représentation graphique des calibrations</p>
+<dl class="field-list simple">
+<dt class="field-odd">Paramètres<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>voltage_values</strong> (<em>_type_</em>) – valeurs de voltages de l’arduino</p></li>
+<li><p><strong>buffers</strong> (<em>_type_</em>) – valeurs des tampons</p></li>
+<li><p><strong>errorbuffers_values</strong> (<em>_type_</em>) – incertitudes sur les tampons</p></li>
+<li><p><strong>errorvoltage_values</strong> (<em>_type_</em>) – incertitude sur les voltages</p></li>
+<li><p><strong>t</strong> (<em>_type_</em>) – temps</p></li>
+<li><p><strong>EM4</strong> (<em>_type_</em>) – _description_</p></li>
+<li><p><strong>EM7</strong> (<em>_type_</em>) – _description_</p></li>
+<li><p><strong>EM10</strong> (<em>_type_</em>) – _description_</p></li>
+<li><p><strong>predict</strong> (<em>_type_</em>) – fonction de prédiction pH=f(V)</p></li>
+<li><p><strong>equation</strong> (<em>_type_</em>) – equation de la calibration</p></li>
+<li><p><strong>R2</strong> (<em>_type_</em>) – R2 de la calibration</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="lib_pH.plot_mes">
+<span class="sig-prename descclassname"><span class="pre">lib_pH.</span></span><span class="sig-name descname"><span class="pre">plot_mes</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">T</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lib_pH.plot_mes" title="Lien vers cette définition"></a></dt>
+<dd><p>Représentation graphique des séries de mesures</p>
+<dl class="field-list simple">
+<dt class="field-odd">Paramètres<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>T</strong> (<em>str</em>) – date du fichier</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="lib_pH.port_connexion">
+<span class="sig-prename descclassname"><span class="pre">lib_pH.</span></span><span class="sig-name descname"><span class="pre">port_connexion</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">br</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">9600</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">portIN</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lib_pH.port_connexion" title="Lien vers cette définition"></a></dt>
+<dd><p>Établit la connexion au port série.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Paramètres<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>br</strong> (<em>int</em>) – Flux de données en baud.</p></li>
+<li><p><strong>portIN</strong> (<em>string</em>) – Identifiant du port série sur lequel le script doit lire des données.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Renvoie<span class="colon">:</span></dt>
+<dd class="field-even"><p><ul class="simple">
+<li><p><strong>port</strong> (<em>string</em>) – Identifiant du port série sur lequel le script doit lire des données.</p></li>
+<li><p><strong>s</strong> (<em>serial.tools.list_ports_common.ListPortInfo / string</em>) – Objet Serial sur lequel on peut appliquer des fonctions d’ouverture, de lecture et de fermeture du port série affilié. En cas d’échec de connexion, “s” sera une chaîne de caractères « erreur ».</p></li>
+</ul>
+</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+</div>
+<ul class="simple">
+<li><p><a class="reference internal" href="genindex.html"><span class="std std-ref">Index</span></a></p></li>
+<li><p><a class="reference internal" href="py-modindex.html"><span class="std std-ref">Index du module</span></a></p></li>
+<li><p><a class="reference internal" href="search.html"><span class="std std-ref">Page de recherche</span></a></p></li>
+</ul>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2025, tgauthierbrouard.</p>
+  </div>
+
+  Compilé avec <a href="https://www.sphinx-doc.org/">Sphinx</a> en utilisant un
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">thème</a>
+    fourni par <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

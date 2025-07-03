@@ -1,0 +1,831 @@
+.\" Man page generated from reStructuredText.
+.
+.
+.nr rst2man-indent-level 0
+.
+.de1 rstReportMargin
+\\$1 \\n[an-margin]
+level \\n[rst2man-indent-level]
+level margin: \\n[rst2man-indent\\n[rst2man-indent-level]]
+-
+\\n[rst2man-indent0]
+\\n[rst2man-indent1]
+\\n[rst2man-indent2]
+..
+.de1 INDENT
+.\" .rstReportMargin pre:
+. RS \\$1
+. nr rst2man-indent\\n[rst2man-indent-level] \\n[an-margin]
+. nr rst2man-indent-level +1
+.\" .rstReportMargin post:
+..
+.de UNINDENT
+. RE
+.\" indent \\n[an-margin]
+.\" old: \\n[rst2man-indent\\n[rst2man-indent-level]]
+.nr rst2man-indent-level -1
+.\" new: \\n[rst2man-indent\\n[rst2man-indent-level]]
+.in \\n[rst2man-indent\\n[rst2man-indent-level]]u
+..
+.TH "SAFE-MPHMTRE" "1" "juin 18, 2025" "" "SAFE-M pH mètre"
+.SH NAME
+safe-mphmtre \- SAFE-M pH mètre 1.0
+[image]
+.INDENT 0.0
+.IP \(bu 2
+Ce programme permet de contrôler un ph\-mètre arduino équipé d’une sonde de température PT100.
+.IP \(bu 2
+Il résulte d’un travail collectif effectué par des étudiants de Licence 3 de l’Institut de physique du globe de Paris.
+.IP \(bu 2
+Il est distribué sous la licence créative common CC\-by\-SA 4.0
+.IP \(bu 2
+.INDENT 2.0
+.TP
+.B Pour le citer:
+Chardon, T., Gauthier\-Brouard, T., Lu, C., Palmieri, C., de Singly, V., Lumembe, O., Métivier, F.,  Baugas\-Villers, O., Bijon, V., Charles\-Nicolas, A., Chin, C., Fossaert, H., Hallé, S., Henry\-Gonzalez, M., Le Liorzou, C., Leroy, L., Marchaland Le Bihan, S., Monti, V., Pasquet, T., Perrenx, L., Poirier, M., Sauvage, D., Sookwhan, N., & Thommy, G. (2024). SAFE\-M\-PH Un pH\-mètre low cost pour l’enseignement [Computer software].
+.UNINDENT
+.UNINDENT
+.SH INSTALLATION
+.SS Emplacement du programme
+.sp
+La première étape consiste à installer le programme permettant d’utiliser le pH mètre.
+Ce programme est en accès libre sur le site internet GitHub sur le compte \X'tty: link https://github.com/fmetivier/pH_meter_V2.0'\fI\%fmetivier\fP\X'tty: link'\&.
+.sp
+\X'tty: link https://github.com/fmetivier/pH_meter_V2.0'\fI\%https://github.com/fmetivier/pH_meter_V2.0\fP\X'tty: link'
+.SS Charger le répertoire
+.sp
+Afin d’utiliser le programme vous avez besoin de charger le répertoire dans lequel il se trouve. Ce répertoire
+contient l’ensemble des codes et dossiers nécessaires à la bonne utilisation des pH mètres.
+.sp
+Vous pouvez cloner le répertoire en saisissant directement dans le terminal la commande:
+.INDENT 0.0
+.INDENT 3.5
+.sp
+.EX
+git clone https://github.com/fmetivier/pH_meter_V2.0.git
+.EE
+.UNINDENT
+.UNINDENT
+.sp
+\fBNOTE:\fP
+.INDENT 0.0
+.INDENT 3.5
+Attention, avant d’importer le programme vérifiez bien que vous vous situez dans votre répertoire de travail.
+.UNINDENT
+.UNINDENT
+.SS Mise en place du pH mètre
+.sp
+Avant de lancer le programme, branchez le pH\-mètre avec le cable d’alimentation à un des ports USB
+de l’ordinateur. Branchez ensuite la sonde pH sur le boitier du pH\-mètre. Devissez le capuchon de la
+sonde, rincez la avec de l’eau distillée ou de l’eau claire si vous n’avez pas d’eau distillée
+à votre disposition. Séchez délicatement puis plongez le pH\-mètre dans la solution à mesurer.
+.SS Démarrage du programme
+.sp
+Vous êtes maintenant prêt à faire fonctionner le pH\-mètre. Vous devez avoir un dossier nommé \fBpH_meter_V2.0\fP, qui contient :
+.INDENT 0.0
+.TP
+.B \fBProgramme pH mètre_V2.py\fP:
+Il s’agit du programme principal permettant d’intéragir avec le pH\-mètre au travers d’un interface dans le terminal.
+.TP
+.B \fBlib_pH.py\fP:
+Ce code contient l’ensemble des fonctions nécessaire au fonctionnement du programme principal.
+.TP
+.B \fBDATA\fP:
+Ces dans ce dossier que vont être enregistrées les données acquisent lors des mesures de pH.
+.TP
+.B \fBCALIB\fP:
+Ce dossier contient les données de toutes les calibrations du pH mètre effectuées, ce qui permet notamment de les réutiliser.
+.TP
+.B \fBFIGURES\fP:
+Comme son nom l’indique, ce dossier regroupe l’ensemble des graphique permettant de visualiser les données mesurées et de suivre l’évolution du pH
+des solutions analysées.
+.TP
+.B \fBsend_ph_T_Uno\fP:
+Ce dossier contient le script à charger sur la carte Arduino permettant de communiquer les données de voltage et de température, mesurées par les sondes, à l’ordinateur.
+.TP
+.B \fBFritzing\fP:
+Contient une image représentant l’agencement et le branchement des différents composants du pH mètre.
+.TP
+.B \fBcompare.py\fP:
+Ce programme permet d’évaluer la précision et fiabilité des pH\-mètres construits à partir de carte Arduino par rapport à un pH mètre de laboratoire Hanna.
+.TP
+.B \fB__pycache__\fP:
+Ce répertoire automatiquement créé par Python stocke les fichiers compilés des modules Python utilisés.
+.TP
+.B \fBMauel_d_utilisation_pH_metre.pdf\fP:
+Cours manuel explicitant l’utilisation du pH mètre.
+.TP
+.B \fBCITATION.cff\fP:
+Métadonnées à utiliser pour citer cd logiciel si vous souhaités l’utiliser.
+.TP
+.B \fBREADME.md\fP:
+Documentation du pH mètre.
+.UNINDENT
+.sp
+Essayons de lancer le programme pour voir comment celui\-ci fonctionne. Saisissez simplement:
+.INDENT 0.0
+.INDENT 3.5
+.sp
+.EX
+# A l\(aqintérieur du dossier pH_meter_V2/
+python3 \(aqProgramme pH mètre_V2.py\(aq
+.EE
+.UNINDENT
+.UNINDENT
+.sp
+Cela devrait lancer le programme dans le terminal et vous dire que vous que la connexion avec l’Arduino est établie,
+vous donner les paramètres de régression de la calibration par défaut du pH mètre ainsi qu’une figure de la courbe de calibration. De plus le programme affiche l’interface
+du MENU PRINCIPAL.
+.sp
+Vous devriez obtenir:
+.INDENT 0.0
+.INDENT 3.5
+.sp
+.EX
+\-> python3 \(aqProgramme pH mètre_V2.py\(aq
+/!\e Port de connexion non détecté. Merci de rétablir la connexion non établie : connexion au processeur dans les réglages avant utilisation.
+Attention aucun arduino disponible
+Les paramètres a et b de notre regression linéaire sont [0.01323408 2.15989141]
+Pour un voltage de 600 le pH prédit est de 10.10033889796552
+0.99985
+
+    ===========================================================================
+    MENU PRINCIPAL
+    ===========================================================================
+    Que souhaitez\-vous faire ?
+    1 \- Calibrer
+    2 \- Mesurer
+    3 \- Représenter graphiquement
+    4 \- Quitter
+    ===========================================================================
+    ?
+.EE
+.UNINDENT
+.UNINDENT
+.sp
+\fBAVERTISSEMENT:\fP
+.INDENT 0.0
+.INDENT 3.5
+Si le pH mètre n’est pas correctement branché à l’ordinateur
+ou que l’Arduino ne parvient à se connecter au port d’accès un message d’erreur devrait apparaître de la forme:
+.INDENT 0.0
+.INDENT 3.5
+.sp
+.EX
+\-> python3 \(aqProgramme pH mètre_V2.py\(aq
+/!\e Port de connexion non détecté. Merci de rétablir la connexion non établie : connexion au processeur dans les réglages avant utilisation.
+Attention aucun arduino disponible
+.EE
+.UNINDENT
+.UNINDENT
+.UNINDENT
+.UNINDENT
+.sp
+Le programme est désormais lancé et le pH\-mètre prêt à être utilisé.
+.SS La suite
+.sp
+Il est maintenant temps de passer aux étapes suivantes:
+.sp
+\fI\%Calibration du pH mètre\fP
+.sp
+\fI\%Mesures du pH\fP
+.sp
+\fI\%Représentation graphique des données\fP
+.SH CALIBRATION DU PH MÈTRE
+.sp
+Pour une meilleure exactitude, un étalonnage fréquent de l’instrument est recommandé. Un étalonnage
+est indispensable dans les cas suivants :
+.INDENT 0.0
+.IP \(bu 2
+L’électrode a été remplacée
+.IP \(bu 2
+Au moins une fois par mois
+.IP \(bu 2
+Après avoir mesuré des produits chimiques agressifs
+.IP \(bu 2
+Lorsqu’une grande exactitude est requise
+.UNINDENT
+.SS Préparation
+.sp
+Versez une petite quantité de solution \fBpH 7,00\fP et \fBpH 4,00\fP dans deux récipients propres. Pour une
+meilleure exactitude, il est conseillé de prendre deux récipients par solution, un récipient pour le rinçage et un autre pour
+l’étalonnage à proprement dit. Le choix des solutions étalons se fait selon l’utilisation, soit \fBpH 7,00\fP et
+\fBpH 4,00\fP dans le cas d’une calibration à deux tampons et \fBpH 10,00\fP, \fBpH 7,00\fP et \fBpH 4,00\fP dans le cas d’une
+calibration à trois tampons.
+.SS Procédure
+.SS Calibration à deux solutions tampons
+.sp
+Ôtez le capuchon de protection en bout de la sonde pH, \fBrincez\fP celle\-ci avec de l’eau distillée puis immergez l’électrode
+dans une solution \fBpH 7,00\fP ; agitez délicatement pendant quelques secondes ; immergez la sonde de température
+et \fBattendez 2 à 3 minutes\fP pour avoir un équilibre thermique correct.
+.sp
+Choisissez dans le menu interface l’option \fBCalibrer\fP en appuyant sur le chiffre \fB1\fP et en validant avec
+la touche \fBEntrée\fP:
+.INDENT 0.0
+.INDENT 3.5
+.sp
+.EX
+===========================================================================
+MENU PRINCIPAL
+===========================================================================
+Que souhaitez\-vous faire ?
+1 \- Calibrer
+2 \- Mesurer
+3 \- Représenter graphiquement
+4 \- Quitter
+===========================================================================
+?
+
+\-> 1
+
+    ===========================================================================
+    MENU CALIBRATION
+    ==========================================================================
+    Voulez \- vous :
+    1 \- Calibrer avec deux tampons (pH 7 et 4) ?
+    2 \- Calibrer avec trois tampons (pH 7, 4 et 10) ?
+    3 \- Calibrer à partir d\(aqune calibration déjà existante dans le répertoire
+    4 \- Quitter le menu calibration et retourner au menu principal
+    ===========================================================================
+    ?
+.EE
+.UNINDENT
+.UNINDENT
+.sp
+Sélectionnez ensuite l’option \fBCalibrer avec deux tampons\fP de la même façon.
+Validez une seconde fois lorsque vous serez prêt à mesurer le tampon à
+\fBpH 7,00\fP\&. Le programme vous demandera alors de patienter \fBune minute\fP le temps que la sonde pH se
+stabilise puis effectuera \fB100 mesures\fP pour une durée approximative de \fBdeux minutes\fP\&.
+.sp
+Une fois les mesures à \fBpH 7,00\fP effectuées, \fBrincez\fP la sonde pH avec de l’eau distillée.
+.sp
+Plongez l’électrode dans la solution \fBpH 4,00\fP et attendez quelques minutes pour la stabilisation de la
+mesure. Une fois prêt à mesurer le tampon à pH 4,00, appuyez sur la touche \fBEntrée\fP pour initier les
+mesures. Comme plus tôt, le programme vous demandera alors de patienter \fB1 minute\fP le temps que la sonde pH
+se stabilise puis effectuera ses \fB100 mesures\fP\&.
+.sp
+Une fois les mesures effectuées, le programme vous demandera:
+.INDENT 0.0
+.INDENT 3.5
+.sp
+.EX
+’Voulez\-vous visualiser la calibration (O/N) ?’
+.EE
+.UNINDENT
+.UNINDENT
+.sp
+En répondant \fBO\fP, \fBo\fP, \fBY\fP ou \fBy\fP, vous obtiendrez alors la courbe d’étalonnage de la calibration
+que vous venez d’effectuer, ses paramètres et le coefficient de corrélation. L’étalonnage est alors terminé, vous pouvez passer
+à vos \fI\%Mesures du pH\fP\&.
+.sp
+Si le programme juge que la calibration n’est pas satisfaisante \fB(R2 < 0.95)\fP, il vous sera proposé de
+recalibrer votre pH\-mètre.
+Si vous souhaitez recalibrer le pH\-mètre, choisissez l’option \fB1\fP\&.
+Si vous souhaitez continuer ainsi et commencer à mesurer, choisissez l’option \fB2\fP\&.
+.SS Calibration à trois solution tampons
+.sp
+Si vous souhaitez calibrer votre pH\-mètre avec \fB3 solutions tampons\fP la procédure est la même mais il vous faudra
+continuer avec la solution \fBpH 10,00\fP\&.
+Pour cela, choisissez dans l’interface \fBMENU CALIBRATION\fP l’option \fB2 \- Calibrer avec trois
+tampons\fP:
+.INDENT 0.0
+.INDENT 3.5
+.sp
+.EX
+===========================================================================
+MENU CALIBRATION
+==========================================================================
+Voulez \- vous :
+1 \- Calibrer avec deux tampons (pH 7 et 4) ?
+2 \- Calibrer avec trois tampons (pH 7, 4 et 10) ?
+3 \- Calibrer à partir d\(aqune calibration déjà existante dans le répertoire
+4 \- Quitter le menu calibration et retourner au menu principal
+===========================================================================
+?
+.EE
+.UNINDENT
+.UNINDENT
+.SS Calibration à partir de données enregistrées
+.sp
+Il est aussi possible de calibrer votre pH\-mètre à partir de données de précédentes calibrations déja répertoriées dans le dossier \fBCALIB\fP\&.
+Pour cela, choisissez dans le \fBMENU CALIBRATION\fP l’option \fB3 \- Calibration à partir d’une calibration déjà exitante dans le répertoire\fP\&.
+Une liste de fichier vous est proposée de la forme:
+.INDENT 0.0
+.INDENT 3.5
+.sp
+.EX
+===========================================================================
+MENU CALIBRATION
+==========================================================================
+Voulez \- vous :
+1 \- Calibrer avec deux tampons (pH 7 et 4) ?
+2 \- Calibrer avec trois tampons (pH 7, 4 et 10) ?
+3 \- Calibrer à partir d\(aqune calibration déjà existante dans le répertoire
+4 \- Quitter le menu calibration et retourner au menu principal
+===========================================================================
+?
+
+\-> 3
+
+Calibrations disponibles:
+0 \- ./CALIB/fichier_calibration_pH10.02 Tue Jun 25 16_23_38 2024.csv
+1 \- ./CALIB/fichier_calibration_pH10.03 Fri Jun 28 11_03_55 2024.csv
+2 \- ./CALIB/fichier_calibration_pH10.05 Thu Jun  6 14_51_13 2024.csv
+3 \- ./CALIB/fichier_calibration_pH10.04 Thu May 30 11_20_10 2024.csv
+4 \- ./CALIB/fichier_calibration_pH10.04 Thu Jun  6 12_36_05 2024.csv
+5 \- ./CALIB/fichier_calibration_pH10.04 Fri May 24 12_30_58 2024.csv
+6 \- ./CALIB/fichier_calibration_pH10.05 Thu Jun  6 14_36_13 2024.csv
+7 \- ./CALIB/fichier_calibration_pH10.04 Fri May 24 12_08_50 2024.csv
+8 \- ./CALIB/fichier_calibration_pH10.04 Thu Jun  6 14_21_31 2024.csv
+9 \- ./CALIB/fichier_calibration_pH10.06 Mon Jul 15 11_34_16 2024.csv
+10 \- ./CALIB/fichier_calibration_pH10.04 Mon Jul 15 16_06_37 2024.csv
+11 \- ./CALIB/fichier_calibration_pH10.05 Tue Jul 16 08_52_04 2024.csv
+Choisissez votre calibration en entrant son numéro d\(aqordre:
+.EE
+.UNINDENT
+.UNINDENT
+.sp
+Il suffit alors de renseigner le numéro d’ordre des données que vous souhaitez utiliser et valider avec la touche \fBEntrée\fP\&.
+.sp
+\fBNOTE:\fP
+.INDENT 0.0
+.INDENT 3.5
+Le fichier à sélectionner est de la forme \fB\&./CALIB/fichier_calibration_pH10.00 Day Month H_min_sec Year.csv\fP mais implicitement
+ceux correspondant à la même calibration pour les \fBpH 4.00\fP et \fB7.00\fP vont aussi être utilisé.
+.UNINDENT
+.UNINDENT
+.sp
+Une fois le fichier renseigné la calibration sera effectuée, la droite de la calibration choisie apparaitra à
+l’écran ainsi que la courbe de l’évolution de l’écart\-type des mesures au cours du temps.
+Vous pouvez maintenant effectuer vos \fI\%Mesures du pH\fP\&.
+.sp
+\fBAVERTISSEMENT:\fP
+.INDENT 0.0
+.INDENT 3.5
+Assurez\-vous que les fichiers que vous renseignez correspondent au format demandé :
+un fichier \fBcsv\fP, avec pour chaque ligne les informations \fBtemps(s);température(°C);voltage(mV)\fP:
+.INDENT 0.0
+.INDENT 3.5
+.sp
+.EX
+0.00; 23.27; 180.00
+0.25; 23.33; 180.00
+0.51; 23.33; 180.00
+0.76; 23.33; 180.00
+1.02; 23.37; 180.00
+1.27; 23.40; 180.00
+1.52; 23.43; 180.00
+1.78; 23.43; 179.00
+2.03; 23.47; 180.00
+\&...
+.EE
+.UNINDENT
+.UNINDENT
+.sp
+Par défaut cela correspond au format des données de \fI\%Mesures du pH\fP\&.
+.UNINDENT
+.UNINDENT
+.SH MESURES DU PH
+.sp
+\fBAVERTISSEMENT:\fP
+.INDENT 0.0
+.INDENT 3.5
+Il est important que la solution à mesurer soit dans les mêmes conditions de pression mais surtout de
+température que les solutions tampons lors de la calibration, puisque la correction du pH en fonction de
+la température s’effectue pendant la calibration. Si la température de votre solution évolue au cours du
+temps une nouvelle calibration est nécessaire.
+.UNINDENT
+.UNINDENT
+.SS Préparation
+.sp
+Après avoir oté le capuchon de protection, plongez la sonde pH ainsi que la sonde de température dans la solution à mesurer.
+Agitez l’électrode pendant quelques secondes puis stabilisez\-la.
+.sp
+Sélectionnez dans le \fBMENU PRINCIPAL\fP l’option \fB2 \- Mesurer\fP en appuyant sur la touche \fB2\fP de votre clavier
+puis valider avec la touche \fBEntrée\fP\&.
+Le programme vous demande alors si vous êtes prêt à initier les mesures, appuyez sur \fBEntrée\fP lorsque vous le serez.
+.sp
+\fBNOTE:\fP
+.INDENT 0.0
+.INDENT 3.5
+Pour avoir des mesures précises, il est nécessaire que l’instrument ait été étalonné au préalable. Si les mesures sont effectuées dans des échantillons
+successifs, il est recommandé de rincer l’électrode entre chaque échantillon, afin de ne pas contaminer
+les échantillons entre\-eux.
+.UNINDENT
+.UNINDENT
+.SS Prise de mesure
+.sp
+Une fois l’opération lancée, \fB10\fP valeurs de pH sont mesurées, pour ces 10 valeurs le programme va afficher
+le \fBtemps\fP (en secondes) de la prise mesure par rapport à l’initiation des mesures, la \fBtempérature moyenne\fP
+et \fBl’écart\-type des mesures de température\fP, le \fBvoltage moyen\fP, \fBl’écart\-type des mesures de voltage\fP, le \fBpH moyen\fP mesuré, \fBl’écart\-type
+des mesures de pH\fP et enfin une valeur de la \fBstabilité\fP\&.
+.sp
+La stabilité est un coefficient qui représente l’ecart entre \fB10\fP valeurs de pH mesurées et les \fB10\fP valeurs mesurées précedentes.
+La mesure de la sonde est considérée comme stabilisée lorque que le coeffcient de stabilité est proche de \fBzéro\fP\&.
+Tant que la valeur du coeffcient de stabilité n’est pas satisfaisante le programme continue d’effectuer des mesures.
+.sp
+Une fois une stabilité satisfaisante atteinte, le programme arrête ses mesures et demande à l’utilisateur s’il souhaite continuer ou non la prise de mesures.
+L’utilisateur a alors le choix de poursuivre les mesures en répondant par \fBO\fP, \fBo\fP, \fBY\fP ou \fBy\fP\&. Le programme effectue alors 20 mesures
+supplémentaires avant de reproposer de continuer ou non.
+.sp
+Si l’utilisateur juge que le nombre de mesures est suffisant et souhaite s’arrêter là, il répond alors à la question posée avec \fBN\fP ou \fBn\fP\&.
+Le programme propose alors à l’utilisateur s’il souhaite voir la \fI\%Représentation graphique des données\fP qu’il vient de mesurer.
+L’ensemble des mesures est enregistré dans un fichier \fBcsv\fP de la forme \fBfichier mesure Day Month H_min_sec Year.csv\fP dans le dossier \fBDATA\fP\&.
+.sp
+\fBAVERTISSEMENT:\fP
+.INDENT 0.0
+.INDENT 3.5
+Si vous souhaitez enregistrer l’évolution des valeurs de pH de vos données en fonction du temps référez\-vous maintenant à la prochaine étape :
+.sp
+\fI\%Représentation graphique des données\fP
+.UNINDENT
+.UNINDENT
+.SS Mesures d’Alcalinité
+.sp
+Si vous souhaitez utilisez ces pH mètre pour une mesure d’alcalinité la procédure est la même mais poursuivez les mesures jusqu’à la fin de votre titrage avec l’option
+.INDENT 0.0
+.INDENT 3.5
+.sp
+.EX
+Continuer les mesures (O/N) ?
+
+\-> N
+.EE
+.UNINDENT
+.UNINDENT
+.sp
+Le titrage peut être considéré comme terminé une fois la valeur seuil de pH atteinte à \fBpH 3.7\fP\&.
+.sp
+Assurez vous que la mesure de pH soit bien stabilisée avant d’ajouter un nouvel incrément de \fBHCl\fP\&.
+.sp
+La représentation graphique de vos mesure aux termes du titrage ainsi que le fichier contenant les données
+mesurées, enregistré dans le dossier \fBDATA\fP, vous permettront de déterminer l’alcalinité à partir des méthodes de
+\fBGran\fP et de \fBCulberson\fP\&.
+.SH REPRÉSENTATION GRAPHIQUE DES DONNÉES
+.sp
+\fBAVERTISSEMENT:\fP
+.INDENT 0.0
+.INDENT 3.5
+Que ce soit à l’issue de votre prise de vos \fI\%Mesures du pH\fP ou pour des données plus anciennes,
+lorsque ce vous souhaitez enregistrer votre figure, ne fermer la fenêtre affichée par le programme la contenant qu’une fois avoir sélectionné
+l’option d’enregistrement:
+.INDENT 0.0
+.INDENT 3.5
+.sp
+.EX
+Sauver (O/N) ?
+
+\-> O
+.EE
+.UNINDENT
+.UNINDENT
+.sp
+Sinon vous n’enregistrerez qu’une page blanche.
+.UNINDENT
+.UNINDENT
+.sp
+Ce programme permet de représenter et d’enregistrer graphiquement les mesures
+effectuées juste à l’instant ou lors de prises de mesures plus anciennes.
+Selectionnez pour cela l’option \fB3 \- Représenter graphiquement\fP dans le \fBMENU PRINCIPAL\fP\&.
+.sp
+Le programme vous affichera la liste des données de mesures disponibles dans le dossier \fBDATA\fP:
+.INDENT 0.0
+.INDENT 3.5
+.sp
+.EX
+===========================================================================
+MENU PRINCIPAL
+===========================================================================
+Que souhaitez\-vous faire ?
+1 \- Calibrer
+2 \- Mesurer
+3 \- Représenter graphiquement
+4 \- Quitter
+===========================================================================
+?
+
+\-> 3
+
+    fichiers disponibles:
+    0 \- ./DATA/fichier_mesure Thu Jun  6 12_58_56 2024.csv
+    1 \- ./DATA/fichier_mesure Thu Jun  6 12_03_47 2024.csv
+    2 \- ./DATA/fichier_mesure Thu Jun  6 12_52_02 2024.csv
+    3 \- ./DATA/fichier_mesure Thu Jun  6 12_04_58 2024.csv
+    4 \- ./DATA/fichier_mesure Thu Jun  6 12_14_54 2024.csv
+    5 \- ./DATA/fichier_mesure Fri Jun 28 11_19_49 2024.csv
+    6 \- ./DATA/fichier_mesure Fri Jun 28 11_27_36 2024.csv
+    7 \- ./DATA/fichier_mesure Thu Jun  6 12_46_56 2024.csv
+    8 \- ./DATA/fichier_mesure Fri Jun 28 11_21_37 2024.csv
+    ...
+.EE
+.UNINDENT
+.UNINDENT
+.sp
+Il suffit alors de renseigner le numéro d’ordre des données que vous souhaitez utiliser et valider avec la touche \fBEntrée\fP\&.
+.sp
+Le graphique de vos données ainsi que l’histogramme des mesures associés vont s’afficher. Le programme va alors vous demander:
+.INDENT 0.0
+.INDENT 3.5
+.sp
+.EX
+Sauver (O/N) ?
+.EE
+.UNINDENT
+.UNINDENT
+.sp
+Il est possible si vous le souhaitez d’enregistrer le graphique obtenu dans le dossier \fBFIGURES\fP, il vous suffit alors de répondre avec les touches
+\fBO\fP, \fBo\fP, \fBY\fP ou \fBy\fP\&.
+Le fichier sera alors enregistré au format \fBpdf\fP\&.
+.SH DOCUMENTATION DES FONCTIONS
+.sp
+Created on Wed May 22 16:09:59 2024
+.sp
+@author ori: Clathi
+.INDENT 0.0
+.TP
+.B lib_pH.Calibration(buffers=[7, 4], n=200, port_test=\(aq\(aq)
+Calibre la sonde pH pour 2 et 3 tampons (7, 4 et 10) en 100 mesures. Corrige les valeurs obtenues en fonction de la température.
+.INDENT 7.0
+.TP
+.B Paramètres
+.INDENT 7.0
+.IP \(bu 2
+\fBbuffers\fP (\fIlist\fP\fI, \fP\fIliste\fP) – DESCRIPTION. The default is [7, 4].
+.IP \(bu 2
+\fBn\fP (\fIint\fP\fI, \fP\fInombre de mesures\fP) – DESCRIPTION. The default is 100.
+.UNINDENT
+.TP
+.B Renvoie
+\fBmodel\fP – DESCRIPTION. Les paramètres a et b de la courbe de calibration, a correspond au coefficient directeur et b à l’ordonnée à l’origine.
+.TP
+.B Type renvoyé
+list, liste
+.UNINDENT
+.UNINDENT
+.INDENT 0.0
+.TP
+.B lib_pH.Calibration_existante()
+Calibre la sonde pH pour 3 tampons (7, 4 et 10) à partir d’une calibration déjà existante, et présente dans le même répertoire que ce programme.
+.INDENT 7.0
+.TP
+.B Renvoie
+\fBmodel\fP – DESCRIPTION. Les paramètres a et b de la courbe de calibration, a correspond au coefficient directeur et b à l’ordonnée à l’origine.
+.TP
+.B Type renvoyé
+list, liste
+.UNINDENT
+.UNINDENT
+.INDENT 0.0
+.TP
+.B lib_pH.default_Calibration()
+Calibration par défaut de la sonde pH, effectuée en laboratoire.
+.INDENT 7.0
+.TP
+.B Renvoie
+\fBmodel\fP – DESCRIPTION. Les paramètres a et b de la courbe de calibration par défaut, a correspond au coefficient directeur et b à l’ordonnée à l’origine.
+.TP
+.B Type renvoyé
+list, liste
+.UNINDENT
+.UNINDENT
+.INDENT 0.0
+.TP
+.B lib_pH.fn_settings(portIN, s, br, nb_inter, time_inter)
+Configuration des paramètres modifiables par l’utilisateur.
+.INDENT 7.0
+.TP
+.B Paramètres
+.INDENT 7.0
+.IP \(bu 2
+\fBportIN\fP (\fIstring\fP) – Identifiant du port série sur lequel le script doit lire des données.
+.IP \(bu 2
+\fBs\fP (\fIserial.tools.list_ports_common.ListPortInfo\fP) – Objet Serial sur lequel on peut appliquer des fonctions d’ouverture, de lecture et de fermeture du port série affilié.
+.IP \(bu 2
+\fBbr\fP (\fIint\fP) – Flux de données en baud.
+.IP \(bu 2
+\fBnb_inter\fP (\fIint\fP) – Nombre de valeurs utilisées pour constituer une mesure (une mesure correspond à la moyenne de toutes les valeurs prélevées).
+.IP \(bu 2
+\fBtime_inter\fP (\fIfloat\fP) – Temps d’intervalle entre chaque prélèvement de valeur au sein d’une mesure.
+.UNINDENT
+.TP
+.B Renvoie
+.INDENT 7.0
+.IP \(bu 2
+\fBportIN\fP (\fIstring\fP) – Identifiant du port série sur lequel le script doit lire des données.
+.IP \(bu 2
+\fBs\fP (\fIserial.tools.list_ports_common.ListPortInfo\fP) – Objet Serial sur lequel on peut appliquer des fonctions d’ouverture, de lecture et de fermeture du port série affilié.
+.IP \(bu 2
+\fBbr\fP (\fIint\fP) – Flux de données en baud.
+.IP \(bu 2
+\fBnb_inter\fP (\fIint\fP) – Nombre de valeurs utilisées pour constituer une mesure (une mesure correspond à la moyenne de toutes les valeurs prélevées).
+.IP \(bu 2
+\fBtime_inter\fP (\fIfloat\fP) – Temps d’intervalle entre chaque prélèvement de valeur au sein d’une mesure.
+.UNINDENT
+
+.UNINDENT
+.UNINDENT
+.INDENT 0.0
+.TP
+.B lib_pH.graph()
+Fait un graphique
+ph =f(t) et T=f(t) avec barres d’erreurs
+à partir d’un fichier de mesures
+sélectionné dans le dossier ./DATA
+.sp
+propose la sauvegarde du fichier dans le dossier ./FIGURES au format pdf
+.UNINDENT
+.INDENT 0.0
+.TP
+.B lib_pH.indiv_measure(port_test, model, n=10)
+_summary_
+.INDENT 7.0
+.TP
+.B Paramètres
+.INDENT 7.0
+.IP \(bu 2
+\fBmodel\fP (\fI_type_\fP) – _description_
+.IP \(bu 2
+\fBn\fP (\fIint\fP\fI, \fP\fIoptional\fP) – _description_, by default 10
+.UNINDENT
+.TP
+.B Type renvoyé
+tuple contenant les moyennes et écart types de température, voltage et ph de la solution
+.UNINDENT
+.UNINDENT
+.INDENT 0.0
+.TP
+.B lib_pH.measure(model, n_stab=20, port_test=\(aq\(aq, n=10)
+Mesure le pH en se basant sur une calibration et renvoie l’évolution des écart\-type au cours du temps.
+.sp
+effectue n mesure individuelles
+.INDENT 7.0
+.TP
+.B Paramètres
+.INDENT 7.0
+.IP \(bu 2
+\fBmodel\fP (\fIlist\fP\fI, \fP\fIliste\fP) – Calibration utilisée. Par défaut les paramètres de courbe de calibration est a = 75.55116667 et b = \-163.1275.
+.IP \(bu 2
+\fBn\fP (\fIint\fP\fI, \fP\fInombre d\(aqacquisitions pour une mesure\fP) – DESCRIPTION. The default is 10.
+.IP \(bu 2
+\fBn_stab\fP (\fIint\fP\fI, \fP\fInombre de mesures utilisées dans le calcul de stabilité\fP)
+.IP \(bu 2
+\fB\(dq\(dq\fP (\fIport_test =\fP)
+.IP \(bu 2
+\fBstring\fP
+.IP \(bu 2
+\fBouvert\fP (\fIport com\fP)
+.UNINDENT
+.UNINDENT
+.UNINDENT
+.INDENT 0.0
+.TP
+.B lib_pH.measurement(a, b, nb_inter, time_inter, s)
+Mesure unique ou en série et enregistrement éventuel des données.
+.INDENT 7.0
+.TP
+.B Paramètres
+.INDENT 7.0
+.IP \(bu 2
+\fBa\fP (\fIfloat\fP) – Pente de régression linéaire entre pH et voltage mesuré.
+.IP \(bu 2
+\fBb\fP (\fIfloat\fP) – Ordonnée à l’origine de régression linéaire entre pH et voltage mesuré.
+.IP \(bu 2
+\fBnb_inter\fP (\fIint\fP) – Nombre de valeurs utilisées pour constituer une mesure (une mesure correspond à la moyenne de toutes les valeurs prélevées).
+.IP \(bu 2
+\fBtime_inter\fP (\fIfloat\fP) – Temps d’intervalle entre chaque prélèvement de valeur au sein d’une mesure.
+.IP \(bu 2
+\fBs\fP (\fIserial.tools.list_ports_common.ListPortInfo\fP) – Objet Serial sur lequel on peut appliquer des fonctions d’ouverture, de lecture et de fermeture du port série affilié.
+.UNINDENT
+.TP
+.B Type renvoyé
+None.
+.UNINDENT
+.UNINDENT
+.INDENT 0.0
+.TP
+.B lib_pH.pH_sensor(nb_inter, time_inter, s)
+Mesure du voltage du pH\-mètre et de la température.
+.INDENT 7.0
+.TP
+.B Paramètres
+.INDENT 7.0
+.IP \(bu 2
+\fBnb_inter\fP (\fIint\fP) – Nombre de valeurs utilisées pour constituer une mesure (une mesure correspond à la moyenne de toutes les valeurs prélevées).
+.IP \(bu 2
+\fBtime_inter\fP (\fIfloat\fP) – Temps d’intervalle entre chaque prélèvement de valeur au sein d’une mesure.
+.IP \(bu 2
+\fBs\fP (\fIserial.tools.list_ports_common.ListPortInfo\fP) – Objet Serial sur lequel on peut appliquer des fonctions d’ouverture, de lecture et de fermeture du port série affilié.
+.UNINDENT
+.TP
+.B Renvoie
+.INDENT 7.0
+.IP \(bu 2
+\fBlist_pH\fP (\fIlist\fP) – valeurs de voltages liées au pH et utilisées pour une mesure.
+.IP \(bu 2
+\fBlist_temperatures\fP (\fIlist\fP) – valeurs de températures utilisées pour une mesure.
+.UNINDENT
+
+.UNINDENT
+.UNINDENT
+.INDENT 0.0
+.TP
+.B lib_pH.pH_temp_adjust(pH, temp)
+Ajustement du pH étalon en fonction de la température par interpolation linéaire.
+.INDENT 7.0
+.TP
+.B Paramètres
+.INDENT 7.0
+.IP \(bu 2
+\fBpH\fP (\fIint\fP) – pH de la solution étalon.
+.IP \(bu 2
+\fBtemp\fP (\fIfloat\fP) – température mesurée de la solution.
+.UNINDENT
+.TP
+.B Renvoie
+\fBpH_adjusted\fP – pH interpolé en fonction de correspondances entre pH et températures connues.
+.TP
+.B Type renvoyé
+float
+.UNINDENT
+.UNINDENT
+.INDENT 0.0
+.TP
+.B lib_pH.plot_calib(voltage_values, buffers, errorbuffers_values, errorvoltage_values, t, EM4, EM7, EM10, predict, equation, R2)
+Représentation graphique des calibrations
+.INDENT 7.0
+.TP
+.B Paramètres
+.INDENT 7.0
+.IP \(bu 2
+\fBvoltage_values\fP (\fI_type_\fP) – valeurs de voltages de l’arduino
+.IP \(bu 2
+\fBbuffers\fP (\fI_type_\fP) – valeurs des tampons
+.IP \(bu 2
+\fBerrorbuffers_values\fP (\fI_type_\fP) – incertitudes sur les tampons
+.IP \(bu 2
+\fBerrorvoltage_values\fP (\fI_type_\fP) – incertitude sur les voltages
+.IP \(bu 2
+\fBt\fP (\fI_type_\fP) – temps
+.IP \(bu 2
+\fBEM4\fP (\fI_type_\fP) – _description_
+.IP \(bu 2
+\fBEM7\fP (\fI_type_\fP) – _description_
+.IP \(bu 2
+\fBEM10\fP (\fI_type_\fP) – _description_
+.IP \(bu 2
+\fBpredict\fP (\fI_type_\fP) – fonction de prédiction pH=f(V)
+.IP \(bu 2
+\fBequation\fP (\fI_type_\fP) – equation de la calibration
+.IP \(bu 2
+\fBR2\fP (\fI_type_\fP) – R2 de la calibration
+.UNINDENT
+.UNINDENT
+.UNINDENT
+.INDENT 0.0
+.TP
+.B lib_pH.plot_mes(T)
+Représentation graphique des séries de mesures
+.INDENT 7.0
+.TP
+.B Paramètres
+\fBT\fP (\fIstr\fP) – date du fichier
+.UNINDENT
+.UNINDENT
+.INDENT 0.0
+.TP
+.B lib_pH.port_connexion(br=9600, portIN=\(aq\(aq)
+Établit la connexion au port série.
+.INDENT 7.0
+.TP
+.B Paramètres
+.INDENT 7.0
+.IP \(bu 2
+\fBbr\fP (\fIint\fP) – Flux de données en baud.
+.IP \(bu 2
+\fBportIN\fP (\fIstring\fP) – Identifiant du port série sur lequel le script doit lire des données.
+.UNINDENT
+.TP
+.B Renvoie
+.INDENT 7.0
+.IP \(bu 2
+\fBport\fP (\fIstring\fP) – Identifiant du port série sur lequel le script doit lire des données.
+.IP \(bu 2
+\fBs\fP (\fIserial.tools.list_ports_common.ListPortInfo / string\fP) – Objet Serial sur lequel on peut appliquer des fonctions d’ouverture, de lecture et de fermeture du port série affilié. En cas d’échec de connexion, “s” sera une chaîne de caractères «\ erreur\ ».
+.UNINDENT
+
+.UNINDENT
+.UNINDENT
+.INDENT 0.0
+.IP \(bu 2
+\fI\%Index\fP
+.IP \(bu 2
+\fI\%Index du module\fP
+.IP \(bu 2
+\fI\%Page de recherche\fP
+.UNINDENT
+.SH AUTHOR
+tgauthierbrouard
+.SH COPYRIGHT
+2025, tgauthierbrouard
+.\" Generated by docutils manpage writer.
+.

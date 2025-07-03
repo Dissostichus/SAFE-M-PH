@@ -1,0 +1,169 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="fr" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Documentation pH mètre &mdash; Documentation SAFE-M-PH 1.0</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
+
+  
+      <script src="_static/jquery.js?v=5d32c60e"></script>
+      <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="_static/documentation_options.js?v=7a28dfa3"></script>
+      <script src="_static/doctools.js?v=9bcbadda"></script>
+      <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="_static/translations.js?v=e6b791cb"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Recherche" href="search.html" />
+    <link rel="next" title="Installation" href="install.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="#" class="icon icon-home">
+            SAFE-M-PH
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Rechercher docs" aria-label="Rechercher docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="install.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="calib.html">Calibration du pH mètre</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mesure.html">Mesures du pH</a></li>
+<li class="toctree-l1"><a class="reference internal" href="graph.html">Représentation graphique des données</a></li>
+<li class="toctree-l1"><a class="reference internal" href="library.html">Documentation des fonctions</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="#">SAFE-M-PH</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="#" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Documentation pH mètre</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/index.rst.txt" rel="nofollow"> Afficher la source de la page</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="documentation-ph-metre">
+<h1>Documentation pH mètre<a class="headerlink" href="#documentation-ph-metre" title="Lien vers cette rubrique"></a></h1>
+<img alt="_images/fig_pH_metre.png" src="_images/fig_pH_metre.png" />
+<ul class="simple">
+<li><p>Ce programme permet de contrôler un ph-mètre arduino équipé d’une sonde de température PT100.</p></li>
+<li><p>Il résulte d’un travail collectif effectué par des étudiants de Licence 3 de l’Institut de physique du globe de Paris.</p></li>
+<li><p>Il est distribué sous la licence créative common CC-by-SA 4.0</p></li>
+<li><dl class="simple">
+<dt>Pour le citer:</dt><dd><p>Chardon, T., Gauthier-Brouard, T., Lu, C., Palmieri, C., de Singly, V., Lumembe, O., Métivier, F.,  Baugas-Villers, O., Bijon, V., Charles-Nicolas, A., Chin, C., Fossaert, H., Hallé, S., Henry-Gonzalez, M., Le Liorzou, C., Leroy, L., Marchaland Le Bihan, S., Monti, V., Pasquet, T., Perrenx, L., Poirier, M., Sauvage, D., Sookwhan, N., &amp; Thommy, G. (2024). SAFE-M-PH Un pH-mètre low cost pour l’enseignement [Computer software].</p>
+</dd>
+</dl>
+</li>
+</ul>
+<div class="toctree-wrapper compound">
+<p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="install.html">Installation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="install.html#emplacement-du-programme">Emplacement du programme</a></li>
+<li class="toctree-l2"><a class="reference internal" href="install.html#charger-le-repertoire">Charger le répertoire</a></li>
+<li class="toctree-l2"><a class="reference internal" href="install.html#mise-en-place-du-ph-metre">Mise en place du pH mètre</a></li>
+<li class="toctree-l2"><a class="reference internal" href="install.html#demarrage-du-programme">Démarrage du programme</a></li>
+<li class="toctree-l2"><a class="reference internal" href="install.html#ajout-d-un-nouveau-ph-metre-au-programme">Ajout d’un nouveau pH-mètre au programme</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="calib.html">Calibration du pH mètre</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="calib.html#preparation">Préparation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="calib.html#procedure">Procédure</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="mesure.html">Mesures du pH</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="mesure.html#preparation">Préparation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mesure.html#prise-de-mesure">Prise de mesure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mesure.html#mesures-d-alcalinite">Mesures d’Alcalinité</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="graph.html">Représentation graphique des données</a></li>
+<li class="toctree-l1"><a class="reference internal" href="library.html">Documentation des fonctions</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="library.html#lib_pH.Calibration"><code class="docutils literal notranslate"><span class="pre">Calibration()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="library.html#lib_pH.Calibration_existante"><code class="docutils literal notranslate"><span class="pre">Calibration_existante()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="library.html#lib_pH.default_Calibration"><code class="docutils literal notranslate"><span class="pre">default_Calibration()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="library.html#lib_pH.fn_settings"><code class="docutils literal notranslate"><span class="pre">fn_settings()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="library.html#lib_pH.graph"><code class="docutils literal notranslate"><span class="pre">graph()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="library.html#lib_pH.indiv_measure"><code class="docutils literal notranslate"><span class="pre">indiv_measure()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="library.html#lib_pH.measure"><code class="docutils literal notranslate"><span class="pre">measure()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="library.html#lib_pH.measurement"><code class="docutils literal notranslate"><span class="pre">measurement()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="library.html#lib_pH.pH_sensor"><code class="docutils literal notranslate"><span class="pre">pH_sensor()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="library.html#lib_pH.pH_temp_adjust"><code class="docutils literal notranslate"><span class="pre">pH_temp_adjust()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="library.html#lib_pH.plot_calib"><code class="docutils literal notranslate"><span class="pre">plot_calib()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="library.html#lib_pH.plot_mes"><code class="docutils literal notranslate"><span class="pre">plot_mes()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="library.html#lib_pH.port_connexion"><code class="docutils literal notranslate"><span class="pre">port_connexion()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</div>
+<ul class="simple">
+<li><p><a class="reference internal" href="genindex.html"><span class="std std-ref">Index</span></a></p></li>
+<li><p><a class="reference internal" href="py-modindex.html"><span class="std std-ref">Index du module</span></a></p></li>
+<li><p><a class="reference internal" href="search.html"><span class="std std-ref">Page de recherche</span></a></p></li>
+</ul>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Pied de page">
+        <a href="install.html" class="btn btn-neutral float-right" title="Installation" accesskey="n" rel="next">Suivant <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2025, SAFE-M.</p>
+  </div>
+
+  Compilé avec <a href="https://www.sphinx-doc.org/">Sphinx</a> en utilisant un
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">thème</a>
+    fourni par <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

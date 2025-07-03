@@ -1,0 +1,47 @@
+\begin{sphinxtheindex}
+\let\bigletter\sphinxstyleindexlettergroup
+\let\spxpagem \sphinxstyleindexpagemain
+\let\spxentry \sphinxstyleindexentry
+\let\spxextra \sphinxstyleindexextra
+
+  \bigletter C
+  \item \spxentry{Calibration()}\spxextra{dans le module lib\_pH}, \hyperpage{23}
+  \item \spxentry{Calibration\_existante()}\spxextra{dans le module lib\_pH}, \hyperpage{23}
+
+  \indexspace
+  \bigletter D
+  \item \spxentry{default\_Calibration()}\spxextra{dans le module lib\_pH}, \hyperpage{23}
+
+  \indexspace
+  \bigletter F
+  \item \spxentry{fn\_settings()}\spxextra{dans le module lib\_pH}, \hyperpage{23}
+
+  \indexspace
+  \bigletter G
+  \item \spxentry{graph()}\spxextra{dans le module lib\_pH}, \hyperpage{24}
+
+  \indexspace
+  \bigletter I
+  \item \spxentry{indiv\_measure()}\spxextra{dans le module lib\_pH}, \hyperpage{24}
+
+  \indexspace
+  \bigletter L
+  \item \spxentry{lib\_pH}
+    \subitem \spxentry{module}, \hyperpage{23}
+
+  \indexspace
+  \bigletter M
+  \item \spxentry{measure()}\spxextra{dans le module lib\_pH}, \hyperpage{24}
+  \item \spxentry{measurement()}\spxextra{dans le module lib\_pH}, \hyperpage{24}
+  \item \spxentry{module}
+    \subitem \spxentry{lib\_pH}, \hyperpage{23}
+
+  \indexspace
+  \bigletter P
+  \item \spxentry{pH\_sensor()}\spxextra{dans le module lib\_pH}, \hyperpage{25}
+  \item \spxentry{pH\_temp\_adjust()}\spxextra{dans le module lib\_pH}, \hyperpage{25}
+  \item \spxentry{plot\_calib()}\spxextra{dans le module lib\_pH}, \hyperpage{25}
+  \item \spxentry{plot\_mes()}\spxextra{dans le module lib\_pH}, \hyperpage{25}
+  \item \spxentry{port\_connexion()}\spxextra{dans le module lib\_pH}, \hyperpage{25}
+
+\end{sphinxtheindex}

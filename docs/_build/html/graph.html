@@ -1,0 +1,165 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="fr" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Représentation graphique des données &mdash; Documentation SAFE-M-PH 1.0</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
+
+  
+      <script src="_static/jquery.js?v=5d32c60e"></script>
+      <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="_static/documentation_options.js?v=7a28dfa3"></script>
+      <script src="_static/doctools.js?v=9bcbadda"></script>
+      <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="_static/translations.js?v=e6b791cb"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Recherche" href="search.html" />
+    <link rel="next" title="Documentation des fonctions" href="library.html" />
+    <link rel="prev" title="Mesures du pH" href="mesure.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            SAFE-M-PH
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Rechercher docs" aria-label="Rechercher docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="install.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="calib.html">Calibration du pH mètre</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mesure.html">Mesures du pH</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Représentation graphique des données</a></li>
+<li class="toctree-l1"><a class="reference internal" href="library.html">Documentation des fonctions</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">SAFE-M-PH</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Représentation graphique des données</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/graph.rst.txt" rel="nofollow"> Afficher la source de la page</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="representation-graphique-des-donnees">
+<span id="graph"></span><h1>Représentation graphique des données<a class="headerlink" href="#representation-graphique-des-donnees" title="Lien vers cette rubrique"></a></h1>
+<div class="admonition warning">
+<p class="admonition-title">Avertissement</p>
+<p>Que ce soit à l’issue de votre prise de vos <a class="reference internal" href="mesure.html#mesure"><span class="std std-ref">Mesures du pH</span></a> ou pour des données plus anciennes,
+lorsque ce vous souhaitez enregistrer votre figure, ne fermer la fenêtre affichée par le programme la contenant qu’une fois avoir sélectionné
+l’option d’enregistrement:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Sauver (O/N) ?
+
+-&gt; O
+</pre></div>
+</div>
+<p>Sinon vous n’enregistrerez qu’une page blanche.</p>
+</div>
+<p>Ce programme permet de représenter et d’enregistrer graphiquement les mesures
+effectuées juste à l’instant ou lors de prises de mesures plus anciennes.
+Selectionnez pour cela l’option <code class="docutils literal notranslate"><span class="pre">3</span> <span class="pre">-</span> <span class="pre">Représenter</span> <span class="pre">graphiquement</span></code> dans le <code class="docutils literal notranslate"><span class="pre">MENU</span> <span class="pre">PRINCIPAL</span></code>.</p>
+<p>Le programme vous affichera la liste des données de mesures disponibles dans le dossier <code class="docutils literal notranslate"><span class="pre">DATA</span></code>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>===========================================================================
+MENU PRINCIPAL
+===========================================================================
+Que souhaitez-vous faire ?
+1 - Calibrer
+2 - Mesurer
+3 - Représenter graphiquement
+4 - Quitter
+===========================================================================
+?
+
+-&gt; 3
+
+    fichiers disponibles:
+    0 - ./DATA/fichier_mesure Thu Jun  6 12_58_56 2024.csv
+    1 - ./DATA/fichier_mesure Thu Jun  6 12_03_47 2024.csv
+    2 - ./DATA/fichier_mesure Thu Jun  6 12_52_02 2024.csv
+    3 - ./DATA/fichier_mesure Thu Jun  6 12_04_58 2024.csv
+    4 - ./DATA/fichier_mesure Thu Jun  6 12_14_54 2024.csv
+    5 - ./DATA/fichier_mesure Fri Jun 28 11_19_49 2024.csv
+    6 - ./DATA/fichier_mesure Fri Jun 28 11_27_36 2024.csv
+    7 - ./DATA/fichier_mesure Thu Jun  6 12_46_56 2024.csv
+    8 - ./DATA/fichier_mesure Fri Jun 28 11_21_37 2024.csv
+    ...
+</pre></div>
+</div>
+<p>Il suffit alors de renseigner le numéro d’ordre des données que vous souhaitez utiliser et valider avec la touche <strong>Entrée</strong>.</p>
+<img alt="_images/fig_mesure.png" src="_images/fig_mesure.png" />
+<p>Le graphique de vos données va s’afficher. Le programme va alors vous demander:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Sauver (O/N) ?
+</pre></div>
+</div>
+<p>Il est possible si vous le souhaitez d’enregistrer le graphique obtenu dans le dossier <code class="docutils literal notranslate"><span class="pre">FIGURES</span></code>, il vous suffit alors de répondre avec les touches
+<code class="docutils literal notranslate"><span class="pre">O</span></code>, <code class="docutils literal notranslate"><span class="pre">o</span></code>, <code class="docutils literal notranslate"><span class="pre">Y</span></code> ou <code class="docutils literal notranslate"><span class="pre">y</span></code>.
+Le fichier sera alors enregistré au format <code class="docutils literal notranslate"><span class="pre">pdf</span></code> dans le dossier <code class="docutils literal notranslate"><span class="pre">FIGURES</span></code>.</p>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Pied de page">
+        <a href="mesure.html" class="btn btn-neutral float-left" title="Mesures du pH" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Précédent</a>
+        <a href="library.html" class="btn btn-neutral float-right" title="Documentation des fonctions" accesskey="n" rel="next">Suivant <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2025, SAFE-M.</p>
+  </div>
+
+  Compilé avec <a href="https://www.sphinx-doc.org/">Sphinx</a> en utilisant un
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">thème</a>
+    fourni par <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

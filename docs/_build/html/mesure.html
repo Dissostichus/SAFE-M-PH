@@ -1,0 +1,205 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="fr" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mesures du pH &mdash; Documentation SAFE-M-PH 1.0</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
+
+  
+      <script src="_static/jquery.js?v=5d32c60e"></script>
+      <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="_static/documentation_options.js?v=7a28dfa3"></script>
+      <script src="_static/doctools.js?v=9bcbadda"></script>
+      <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="_static/translations.js?v=e6b791cb"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Recherche" href="search.html" />
+    <link rel="next" title="Représentation graphique des données" href="graph.html" />
+    <link rel="prev" title="Calibration du pH mètre" href="calib.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            SAFE-M-PH
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Rechercher docs" aria-label="Rechercher docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="install.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="calib.html">Calibration du pH mètre</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Mesures du pH</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#preparation">Préparation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#prise-de-mesure">Prise de mesure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#mesures-d-alcalinite">Mesures d’Alcalinité</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="graph.html">Représentation graphique des données</a></li>
+<li class="toctree-l1"><a class="reference internal" href="library.html">Documentation des fonctions</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">SAFE-M-PH</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Mesures du pH</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/mesure.rst.txt" rel="nofollow"> Afficher la source de la page</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="mesures-du-ph">
+<span id="mesure"></span><h1>Mesures du pH<a class="headerlink" href="#mesures-du-ph" title="Lien vers cette rubrique"></a></h1>
+<div class="admonition warning">
+<p class="admonition-title">Avertissement</p>
+<p>Il est important que la solution à mesurer soit dans les mêmes conditions de pression mais surtout de
+température que les solutions tampons lors de la calibration, puisque la correction du pH en fonction de
+la température s’effectue pendant la calibration. Si la température de votre solution évolue au cours du
+temps une nouvelle calibration est nécessaire.</p>
+</div>
+<section id="preparation">
+<h2>Préparation<a class="headerlink" href="#preparation" title="Lien vers cette rubrique"></a></h2>
+<p>Après avoir oté le capuchon de protection, plongez la sonde pH ainsi que la sonde de température dans la solution à mesurer.
+Agitez l’électrode pendant quelques secondes puis stabilisez-la.</p>
+<p>Sélectionnez dans le <code class="docutils literal notranslate"><span class="pre">MENU</span> <span class="pre">PRINCIPAL</span></code> l’option <code class="docutils literal notranslate"><span class="pre">2</span> <span class="pre">-</span> <span class="pre">Mesurer</span></code> en appuyant sur la touche <code class="docutils literal notranslate"><span class="pre">2</span></code> de votre clavier
+puis valider avec la touche <strong>Entrée</strong>.
+Le programme vous demande alors si vous êtes prêt à initier les mesures, appuyez sur <strong>Entrée</strong> lorsque vous le serez.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Pour avoir des mesures précises, il est nécessaire que l’instrument ait été étalonné au préalable. Si les mesures sont effectuées dans des échantillons
+successifs, il est recommandé de rincer l’électrode entre chaque échantillon, afin de ne pas contaminer
+les échantillons entre-eux.</p>
+</div>
+</section>
+<section id="prise-de-mesure">
+<h2>Prise de mesure<a class="headerlink" href="#prise-de-mesure" title="Lien vers cette rubrique"></a></h2>
+<p>Une fois l’opération lancée, <strong>10</strong> valeurs de pH sont mesurées, pour ces 10 valeurs le programme va afficher
+le <strong>temps</strong> (en secondes) de la prise mesure par rapport à l’initiation des mesures, la <strong>température moyenne</strong>
+et <strong>l’écart-type des mesures de température</strong>, le <strong>voltage moyen</strong>, <strong>l’écart-type des mesures de voltage</strong>, le <strong>pH moyen</strong> mesuré, <strong>l’écart-type
+des mesures de pH</strong> et enfin une valeur de la <strong>stabilité</strong>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>===========================================================================
+MENU PRINCIPAL
+===========================================================================
+Que souhaitez-vous faire ?
+1 - Calibrer
+2 - Mesurer
+3 - Représenter graphiquement
+4 - Quitter
+===========================================================================
+?
+
+-&gt; 2
+
+Prêt à mesurer ?
+
+Les mesures commencent
+
+Temps: 0.00
+Température: 25.54 +/- 0.02
+Voltage: 760.00 +/- 2.86
+PH: 8.83 +/- 0.08
+Stabilité: 2.14
+
+Temps: 2.65
+Température: 25.55 +/- 0.02
+Voltage: 761.64 +/- 1.67
+PH: 8.78 +/- 0.05
+Stabilité: 2.94
+</pre></div>
+</div>
+<p>La stabilité est un coefficient qui représente l’ecart entre <strong>10</strong> valeurs de pH mesurées et les <strong>10</strong> valeurs mesurées précedentes.
+La mesure de la sonde est considérée comme stabilisée lorque que le coeffcient de stabilité est proche de <strong>zéro</strong>.
+Tant que la valeur du coeffcient de stabilité n’est pas satisfaisante le programme continue d’effectuer des mesures.</p>
+<p>Une fois une stabilité satisfaisante atteinte, le programme arrête ses mesures et demande à l’utilisateur s’il souhaite continuer ou non la prise de mesures.
+L’utilisateur a alors le choix de poursuivre les mesures en répondant par <code class="docutils literal notranslate"><span class="pre">O</span></code>, <code class="docutils literal notranslate"><span class="pre">o</span></code>, <code class="docutils literal notranslate"><span class="pre">Y</span></code> ou <code class="docutils literal notranslate"><span class="pre">y</span></code>. Le programme effectue alors 20 mesures
+supplémentaires avant de reproposer de continuer ou non.</p>
+<p>Si l’utilisateur juge que le nombre de mesures est suffisant et souhaite s’arrêter là, il répond alors à la question posée avec <code class="docutils literal notranslate"><span class="pre">N</span></code> ou <code class="docutils literal notranslate"><span class="pre">n</span></code>.
+Le programme propose alors à l’utilisateur s’il souhaite voir la <a class="reference internal" href="graph.html#graph"><span class="std std-ref">Représentation graphique des données</span></a> qu’il vient de mesurer.
+L’ensemble des mesures est enregistré dans un fichier <code class="docutils literal notranslate"><span class="pre">csv</span></code> de la forme <code class="docutils literal notranslate"><span class="pre">fichier</span> <span class="pre">mesure</span> <span class="pre">Day</span> <span class="pre">Month</span> <span class="pre">H_min_sec</span> <span class="pre">Year.csv</span></code> dans le dossier <code class="docutils literal notranslate"><span class="pre">DATA</span></code>.</p>
+<div class="admonition warning">
+<p class="admonition-title">Avertissement</p>
+<p>Si vous souhaitez enregistrer l’évolution des valeurs de pH de vos données en fonction du temps référez-vous maintenant à la prochaine étape :</p>
+<p><a class="reference internal" href="graph.html#graph"><span class="std std-ref">Représentation graphique des données</span></a></p>
+</div>
+</section>
+<section id="mesures-d-alcalinite">
+<h2>Mesures d’Alcalinité<a class="headerlink" href="#mesures-d-alcalinite" title="Lien vers cette rubrique"></a></h2>
+<p>Si vous souhaitez utilisez ces pH mètre pour une mesure d’alcalinité la procédure est la même mais poursuivez les mesures jusqu’à la fin de votre titrage avec l’option</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Continuer les mesures (O/N) ?
+
+-&gt; N
+</pre></div>
+</div>
+<p>Le titrage peut être considéré comme terminé une fois la valeur seuil de pH atteinte à <strong>pH 3.7</strong>.</p>
+<p>Assurez vous que la mesure de pH soit bien stabilisée avant d’ajouter un nouvel incrément de <strong>HCl</strong>.</p>
+<p>La représentation graphique de vos mesure aux termes du titrage ainsi que le fichier contenant les données
+mesurées, enregistré dans le dossier <code class="docutils literal notranslate"><span class="pre">DATA</span></code>, vous permettront de déterminer l’alcalinité à partir des méthodes de
+<strong>Gran</strong> et de <strong>Culberson</strong>.</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Pied de page">
+        <a href="calib.html" class="btn btn-neutral float-left" title="Calibration du pH mètre" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Précédent</a>
+        <a href="graph.html" class="btn btn-neutral float-right" title="Représentation graphique des données" accesskey="n" rel="next">Suivant <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2025, SAFE-M.</p>
+  </div>
+
+  Compilé avec <a href="https://www.sphinx-doc.org/">Sphinx</a> en utilisant un
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">thème</a>
+    fourni par <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

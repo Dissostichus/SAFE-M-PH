@@ -1,0 +1,331 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="fr" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Calibration du pH mètre &mdash; Documentation SAFE-M-PH 1.0</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
+
+  
+      <script src="_static/jquery.js?v=5d32c60e"></script>
+      <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="_static/documentation_options.js?v=7a28dfa3"></script>
+      <script src="_static/doctools.js?v=9bcbadda"></script>
+      <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="_static/translations.js?v=e6b791cb"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Recherche" href="search.html" />
+    <link rel="next" title="Mesures du pH" href="mesure.html" />
+    <link rel="prev" title="Installation" href="install.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            SAFE-M-PH
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Rechercher docs" aria-label="Rechercher docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="install.html">Installation</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Calibration du pH mètre</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#preparation">Préparation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#procedure">Procédure</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#calibration-a-deux-solutions-tampons">Calibration à deux solutions tampons</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#calibration-a-trois-solution-tampons">Calibration à trois solution tampons</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#calibration-a-partir-de-donnees-enregistrees">Calibration à partir de données enregistrées</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="mesure.html">Mesures du pH</a></li>
+<li class="toctree-l1"><a class="reference internal" href="graph.html">Représentation graphique des données</a></li>
+<li class="toctree-l1"><a class="reference internal" href="library.html">Documentation des fonctions</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">SAFE-M-PH</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Calibration du pH mètre</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/calib.rst.txt" rel="nofollow"> Afficher la source de la page</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="calibration-du-ph-metre">
+<span id="calibration"></span><h1>Calibration du pH mètre<a class="headerlink" href="#calibration-du-ph-metre" title="Lien vers cette rubrique"></a></h1>
+<p>Pour une meilleure exactitude, un étalonnage fréquent de l’instrument est recommandé. Un étalonnage
+est indispensable dans les cas suivants :</p>
+<ul class="simple">
+<li><p>L’électrode a été remplacée</p></li>
+<li><p>Au moins une fois par mois</p></li>
+<li><p>Après avoir mesuré des produits chimiques agressifs</p></li>
+<li><p>Lorsqu’une grande exactitude est requise</p></li>
+</ul>
+<section id="preparation">
+<h2>Préparation<a class="headerlink" href="#preparation" title="Lien vers cette rubrique"></a></h2>
+<p>Versez une petite quantité de solution <strong>pH 7,00</strong> et <strong>pH 4,00</strong> dans deux récipients propres. Pour une
+meilleure exactitude, il est conseillé de prendre deux récipients par solution, un récipient pour le rinçage et un autre pour
+l’étalonnage à proprement dit. Le choix des solutions étalons se fait selon l’utilisation, soit <strong>pH 7,00</strong> et
+<strong>pH 4,00</strong> dans le cas d’une calibration à deux tampons et <strong>pH 10,00</strong>, <strong>pH 7,00</strong> et <strong>pH 4,00</strong> dans le cas d’une
+calibration à trois tampons.</p>
+</section>
+<section id="procedure">
+<h2>Procédure<a class="headerlink" href="#procedure" title="Lien vers cette rubrique"></a></h2>
+<section id="calibration-a-deux-solutions-tampons">
+<h3>Calibration à deux solutions tampons<a class="headerlink" href="#calibration-a-deux-solutions-tampons" title="Lien vers cette rubrique"></a></h3>
+<p>Ôtez le capuchon de protection en bout de la sonde pH, <strong>rincez</strong> celle-ci avec de l’eau distillée puis immergez l’électrode
+dans une solution <strong>pH 7,00</strong> ; agitez délicatement pendant quelques secondes ; immergez la sonde de température
+et <strong>attendez 2 à 3 minutes</strong> pour avoir un équilibre thermique correct.</p>
+<p>Choisissez dans le menu interface l’option <code class="docutils literal notranslate"><span class="pre">Calibrer</span></code> en appuyant sur le chiffre <code class="docutils literal notranslate"><span class="pre">1</span></code> et en validant avec
+la touche <strong>Entrée</strong>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>===========================================================================
+MENU PRINCIPAL
+===========================================================================
+Que souhaitez-vous faire ?
+1 - Calibrer
+2 - Mesurer
+3 - Représenter graphiquement
+4 - Quitter
+===========================================================================
+?
+
+-&gt; 1
+
+    ===========================================================================
+    MENU CALIBRATION
+    ==========================================================================
+    Voulez - vous :
+    1 - Calibrer avec deux tampons (pH 7 et 4) ?
+    2 - Calibrer avec trois tampons (pH 7, 4 et 10) ?
+    3 - Calibrer à partir d&#39;une calibration déjà existante dans le répertoire
+    4 - Quitter le menu calibration et retourner au menu principal
+    ===========================================================================
+    ?
+</pre></div>
+</div>
+<p>Sélectionnez ensuite l’option <code class="docutils literal notranslate"><span class="pre">Calibrer</span> <span class="pre">avec</span> <span class="pre">deux</span> <span class="pre">tampons</span></code> de la même façon.
+Validez une seconde fois lorsque vous serez prêt à mesurer le tampon à
+<strong>pH 7,00</strong>. Le programme vous demandera alors de patienter <strong>une minute</strong> le temps que la sonde pH se
+stabilise puis effectuera <strong>100 mesures</strong> pour une durée approximative de <strong>deux minutes</strong>.</p>
+<p>Une fois les mesures à <strong>pH 7,00</strong> effectuées, <strong>rincez</strong> la sonde pH avec de l’eau distillée.</p>
+<p>Plongez l’électrode dans la solution <strong>pH 4,00</strong> et attendez quelques minutes pour la stabilisation de la
+mesure. Une fois prêt à mesurer le tampon à pH 4,00, appuyez sur la touche <strong>Entrée</strong> pour initier les
+mesures. Comme plus tôt, le programme vous demandera alors de patienter <strong>1 minute</strong> le temps que la sonde pH
+se stabilise puis effectuera ses <strong>100 mesures</strong>.</p>
+<p>Une fois les mesures effectuées, le programme vous demandera:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>’Voulez-vous visualiser la calibration (O/N) ?’
+</pre></div>
+</div>
+<p>En répondant <code class="docutils literal notranslate"><span class="pre">O</span></code>, <code class="docutils literal notranslate"><span class="pre">o</span></code>, <code class="docutils literal notranslate"><span class="pre">Y</span></code> ou <code class="docutils literal notranslate"><span class="pre">y</span></code>, vous obtiendrez alors la courbe d’étalonnage de la calibration
+que vous venez d’effectuer, ses paramètres et le coefficient de corrélation. L’étalonnage est alors terminé, vous pouvez passer
+à vos <a class="reference internal" href="mesure.html#mesure"><span class="std std-ref">Mesures du pH</span></a>.</p>
+<p>Si le programme juge que la calibration n’est pas satisfaisante <strong>(R2 &lt; 0.95)</strong>, il vous sera proposé de
+recalibrer votre pH-mètre.
+Si vous souhaitez recalibrer le pH-mètre, choisissez l’option <code class="docutils literal notranslate"><span class="pre">1</span></code>.
+Si vous souhaitez continuer ainsi et commencer à mesurer, choisissez l’option <code class="docutils literal notranslate"><span class="pre">2</span></code>.</p>
+</section>
+<section id="calibration-a-trois-solution-tampons">
+<h3>Calibration à trois solution tampons<a class="headerlink" href="#calibration-a-trois-solution-tampons" title="Lien vers cette rubrique"></a></h3>
+<p>Si vous souhaitez calibrer votre pH-mètre avec <strong>3 solutions tampons</strong> la procédure est la même mais il vous faudra
+continuer avec la solution <strong>pH 10,00</strong>.
+Pour cela, choisissez dans l’interface <code class="docutils literal notranslate"><span class="pre">MENU</span> <span class="pre">CALIBRATION</span></code> l’option <code class="docutils literal notranslate"><span class="pre">2</span> <span class="pre">-</span> <span class="pre">Calibrer</span> <span class="pre">avec</span> <span class="pre">trois</span>
+<span class="pre">tampons</span></code>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>===========================================================================
+MENU CALIBRATION
+==========================================================================
+Voulez - vous :
+1 - Calibrer avec deux tampons (pH 7 et 4) ?
+2 - Calibrer avec trois tampons (pH 7, 4 et 10) ?
+3 - Calibrer à partir d&#39;une calibration déjà existante dans le répertoire
+4 - Quitter le menu calibration et retourner au menu principal
+===========================================================================
+?
+
+-&gt; 2
+
+Quel est le pH de la troisième solution que vous souhaitez utilisez ? ( 9 / 10 / 11)
+
+-&gt; 10
+
+Prêt pour calibration pH7 ?
+
+Patientez 1 min le temps que la sonde se stabilise
+
+Les mesures commencent
+
+La température relevée est de 25.91732608695652
+
+Prêt pour calibration pH4 ?
+
+Patientez 1 min le temps que la sonde se stabilise
+
+Les mesures commencent
+
+La température relevée est de 25.974727592267133
+
+Prêt pour calibration pH10 ?
+
+Patientez 1 min le temps que la sonde se stabilise
+
+Les mesures commencent
+
+La température relevée est de 26.36460258780037
+
+Les paramètres a et b de notre regression linéaire sont [-2.91457992e-02  3.09806410e+01]
+(&#39;r2 =&#39;, 0.9974)
+
+Voulez-vous visualiser la calibration (O/N) ?
+</pre></div>
+</div>
+<p>Les données de la calibration effectuée sont enregistrées dans le dossier <code class="docutils literal notranslate"><span class="pre">CALIB</span></code>.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Si vous ne possédez pas de solution tampon pH 10 la calibration à 3 solutions est aussi possible avec des pH 9 et pH 11. Le programme vous demande pour cela:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Quel est le pH de la troisième solution que vous souhaitez utilisez ? ( 9 / 10 / 11)
+</pre></div>
+</div>
+<p>Il suffit alors de renseigner la valeur pH de la troisième solution tampon utilisée et la procédure est la même que décrite plus haut.</p>
+</div>
+</section>
+<section id="calibration-a-partir-de-donnees-enregistrees">
+<h3>Calibration à partir de données enregistrées<a class="headerlink" href="#calibration-a-partir-de-donnees-enregistrees" title="Lien vers cette rubrique"></a></h3>
+<p>Il est aussi possible de calibrer votre pH-mètre à partir de données de précédentes calibrations déja répertoriées dans le dossier <code class="docutils literal notranslate"><span class="pre">CALIB</span></code>.
+Pour cela, choisissez dans le <code class="docutils literal notranslate"><span class="pre">MENU</span> <span class="pre">CALIBRATION</span></code> l’option <code class="docutils literal notranslate"><span class="pre">3</span> <span class="pre">-</span> <span class="pre">Calibration</span> <span class="pre">à</span> <span class="pre">partir</span> <span class="pre">d’une</span> <span class="pre">calibration</span> <span class="pre">déjà</span> <span class="pre">exitante</span> <span class="pre">dans</span> <span class="pre">le</span> <span class="pre">répertoire</span></code>.
+Une liste de fichier vous est proposée de la forme:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>===========================================================================
+MENU CALIBRATION
+==========================================================================
+Voulez - vous :
+1 - Calibrer avec deux tampons (pH 7 et 4) ?
+2 - Calibrer avec trois tampons (pH 7, 4 et 10) ?
+3 - Calibrer à partir d&#39;une calibration déjà existante dans le répertoire
+4 - Quitter le menu calibration et retourner au menu principal
+===========================================================================
+?
+
+-&gt; 3
+
+Cette option n&#39;est possible que pour des calibrations à 3 solutions, quel est le pH de la troisième solution de la calibration que vous souhaitez utilisez ? ( 9 / 10 / 11)
+
+-&gt; 10
+
+Calibrations disponibles:
+0 - ./CALIB/fichier_calibration_pH10.0 Mon Jun 23 11:46:13 2025.csv
+
+Choisissez votre calibration en entrant son numéro d&#39;ordre:
+
+-&gt; 0
+
+Mon Jun 23 11:46:13 2025
+./CALIB/fichier_calibration_pH4.01 Mon Jun 23 11:46:13 2025.csv
+./CALIB/fichier_calibration_pH7.01 Mon Jun 23 11:46:13 2025.csv
+./CALIB/fichier_calibration_pH10.0 Mon Jun 23 11:46:13 2025.csv
+
+Les paramètres a et b de notre regression linéaire sont [-2.91457992e-02  3.09806410e+01]
+(&#39;r2 =&#39;, 0.9974)
+</pre></div>
+</div>
+<p>Il suffit alors de renseigner le numéro d’ordre des données que vous souhaitez utiliser et valider avec la touche <strong>Entrée</strong>.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Le fichier à sélectionner est de la forme <code class="docutils literal notranslate"><span class="pre">./CALIB/fichier_calibration_pH10.00</span> <span class="pre">Day</span> <span class="pre">Month</span> <span class="pre">H_min_sec</span> <span class="pre">Year.csv</span></code> mais implicitement
+ceux correspondant à la même calibration pour les <strong>pH 4.00</strong> et <strong>7.00</strong> vont aussi être utilisé. Notez que si la calibration que vos souhaitez
+retrouver n’utilisait pas de solutions pH 10 mais pH 9 ou pH 11 le programme vous demande avant de lister les fichiers:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Cette</span> <span class="n">option</span> <span class="n">n</span><span class="s1">&#39;est possible que pour des calibrations à 3 solutions, quel est le pH de la troisième solution de la calibration que vous souhaitez utilisez ? ( 9 / 10 / 11)</span>
+</pre></div>
+</div>
+<p>Il vous suffit d’indiquer le pH de la troisième solution, tout les fichiers de calibration utilisant la solution au pH indiqué vont être listés. Une fois une
+calibration sélectionnée les fichiers correspondant à la même calibration pour les <strong>pH 4.00</strong> et <strong>7.00</strong> le seront aussi implicitement.</p>
+</div>
+<p>Une fois le fichier renseigné la calibration sera effectuée, la droite de la calibration choisie apparaitra à
+l’écran ainsi que la courbe de l’évolution de l’écart-type des mesures au cours du temps.</p>
+<img alt="_images/fig_calib.png" src="_images/fig_calib.png" />
+<p>Vous pouvez maintenant effectuer vos <a class="reference internal" href="mesure.html#mesure"><span class="std std-ref">Mesures du pH</span></a>.</p>
+<div class="admonition warning">
+<p class="admonition-title">Avertissement</p>
+<p>Assurez-vous que les fichiers que vous renseignez correspondent au format demandé :
+un fichier <code class="docutils literal notranslate"><span class="pre">csv</span></code>, avec pour chaque ligne les informations <code class="docutils literal notranslate"><span class="pre">temps(s);température(°C);voltage(mV)</span></code>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mf">0.00</span><span class="p">;</span> <span class="mf">23.27</span><span class="p">;</span> <span class="mf">180.00</span>
+<span class="mf">0.25</span><span class="p">;</span> <span class="mf">23.33</span><span class="p">;</span> <span class="mf">180.00</span>
+<span class="mf">0.51</span><span class="p">;</span> <span class="mf">23.33</span><span class="p">;</span> <span class="mf">180.00</span>
+<span class="mf">0.76</span><span class="p">;</span> <span class="mf">23.33</span><span class="p">;</span> <span class="mf">180.00</span>
+<span class="mf">1.02</span><span class="p">;</span> <span class="mf">23.37</span><span class="p">;</span> <span class="mf">180.00</span>
+<span class="mf">1.27</span><span class="p">;</span> <span class="mf">23.40</span><span class="p">;</span> <span class="mf">180.00</span>
+<span class="mf">1.52</span><span class="p">;</span> <span class="mf">23.43</span><span class="p">;</span> <span class="mf">180.00</span>
+<span class="mf">1.78</span><span class="p">;</span> <span class="mf">23.43</span><span class="p">;</span> <span class="mf">179.00</span>
+<span class="mf">2.03</span><span class="p">;</span> <span class="mf">23.47</span><span class="p">;</span> <span class="mf">180.00</span>
+<span class="o">...</span>
+</pre></div>
+</div>
+<p>Par défaut cela correspond au format des données de <a class="reference internal" href="mesure.html#mesure"><span class="std std-ref">Mesures du pH</span></a>.</p>
+</div>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Pied de page">
+        <a href="install.html" class="btn btn-neutral float-left" title="Installation" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Précédent</a>
+        <a href="mesure.html" class="btn btn-neutral float-right" title="Mesures du pH" accesskey="n" rel="next">Suivant <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2025, SAFE-M.</p>
+  </div>
+
+  Compilé avec <a href="https://www.sphinx-doc.org/">Sphinx</a> en utilisant un
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">thème</a>
+    fourni par <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
