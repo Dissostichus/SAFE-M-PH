@@ -104,36 +104,27 @@ def port_connexion(br = 9600 , portIN = '') :
 
     """
 
-    arduino_list=['7513931383135150F0D1','85035323234351504260','85035323234351E09062','75439313737351402252','8503532323435130F142','75330303934351B05162']
-
-    if portIN == '' :
+    if portIN:
+        try:
+            s = serial.Serial(port=portIN, baudrate=br, timeout=5)
+            print(f'Connexion établie avec {portIN}')
+            return portIN, s
+        except serial.SerialException:
+            print(f"Erreur: impossible d'ouvrir {portIN}")
+            return '', 'error'
+    else:
         ports = list(serial.tools.list_ports.comports())
-    else :
-        ports = [portIN]  
-    i = 0 
-    conn = False
-    while conn == False :
-        try :
-            port = ports[i] 
-            if portIN == '' and (port.manufacturer == 'Arduino (www.arduino.cc)' or port.serial_number in arduino_list ):
-                port = port.device
-                port = (port).replace('cu','tty')
-                s = serial.Serial(port=port, baudrate=br, timeout=5) 
-                conn = True  
-                print('Connexion établie avec le port', port)
-            else :
-                s = serial.Serial(port=port, baudrate=br, timeout=5)
-                conn = True
-                print('Connexion établie avec le port', port)
-        except :
-            i += 1
-            if i >= len(ports) :
-                print("/!\ Port de connexion non détecté. Merci de rétablir la connexion non établie : connexion au processeur dans les réglages avant utilisation.")
-                s = 'error' 
-                portIN = '' 
-                conn = True
-            pass     
-    return port , s
+        for port in ports:
+            port_name = port.device
+            if 'ttyACM' in port_name or 'ttyUSB' in port_name:  # Filtre Linux
+                try:
+                    s = serial.Serial(port=port_name, baudrate=br, timeout=5)
+                    print(f'Connexion réussie sur {port_name}')
+                    return port_name, s
+                except serial.SerialException:
+                    continue
+        print("/!\ Aucun port Arduino détecté")
+        return '', 'error'
 
 
 def fn_settings(portIN , s , br , nb_inter , time_inter) :
