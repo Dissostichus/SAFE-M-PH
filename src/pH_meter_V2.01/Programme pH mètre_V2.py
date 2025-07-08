@@ -38,11 +38,15 @@ if __name__ == '__main__':
     default_model = default_Calibration()
     while continuer:
         
+        continuer_calib = True
+        
         x = input (interface)
         
         if x == '1':
             
             while continuer_calib :
+
+                
                 interface_calib ="""
     ===========================================================================
     MENU CALIBRATION

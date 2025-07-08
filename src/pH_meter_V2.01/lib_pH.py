@@ -123,7 +123,7 @@ def port_connexion(br = 9600 , portIN = '') :
                     return port_name, s
                 except serial.SerialException:
                     continue
-        print("/!\ Aucun port Arduino détecté")
+                    print("/!\ Aucun port Arduino détecté")
         return '', 'error'
 
 
